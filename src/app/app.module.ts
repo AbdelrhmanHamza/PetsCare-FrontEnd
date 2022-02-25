@@ -16,6 +16,7 @@ import { RegisterationComponent } from './pages/registeration/registeration.comp
 import { LoginComponent } from './pages/login/login.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
+import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BusinessSubscriptionTabComponent } from './Business/business-subscripti
     RegisterationComponent,
     LoginComponent,
     HomeContainerComponent,
-    BusinessSubscriptionTabComponent
+    BusinessSubscriptionTabComponent,
+    BusinessRequestsTabComponent
   ],
   imports: [
     BrowserModule,
