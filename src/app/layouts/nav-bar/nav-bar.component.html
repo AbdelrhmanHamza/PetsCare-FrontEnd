@@ -9,11 +9,11 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a [routerLink]="'/home'" class="nav-item nav-link active">Home</a>
-            <a [routerLink]="'/about-us'" class="nav-item nav-link">About Us</a>
-            <a [routerLink]="'/services'" class="nav-item nav-link">Our Services</a>
-            <a [routerLink]="'/contact-us'" class="nav-item nav-link">Contact us</a>
-            <a [routerLink]="'/login'" class="nav-item nav-link">login</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/home'" class="nav-item nav-link ">Home</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/about-us'" class="nav-item nav-link">About Us</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/services'" class="nav-item nav-link">Our Services</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/contact-us'" class="nav-item nav-link">Contact us</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/login'" class="nav-item nav-link">login</a>
 
             <a [routerLink]="'/sign-up'" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Sign Up <i class="bi bi-arrow-right"></i></a>
         </div>
