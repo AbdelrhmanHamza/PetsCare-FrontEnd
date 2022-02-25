@@ -18,6 +18,7 @@ import { HomeContainerComponent } from './home/home-container/home-container.com
 import { FilterComponent } from './client/clientBrowsing/filter/filter.component';
 import { CardComponent } from './client/clientBrowsing/card/card.component';
 import { PaginationComponent } from './client/clientBrowsing/pagination/pagination.component';
+import { ContainerComponent } from './client/clientBrowsing/container/container.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PaginationComponent } from './client/clientBrowsing/pagination/paginati
     HomeContainerComponent,
     FilterComponent,
     CardComponent,
-    PaginationComponent
+    PaginationComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
