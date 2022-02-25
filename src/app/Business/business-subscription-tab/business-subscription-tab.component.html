@@ -12,11 +12,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Anna</td>
-                            <td>Pitt</td>
-                            <td>35</td>
+                        <tr *ngFor="let package of packages">
+                            <td>{{package.id}}</td>
+                            <td>{{package.packageName}}</td>
+                            <td>{{package.createdAt}}</td>
+                            <td>{{package.status}}</td>
                         </tr>
                     </tbody>
                 </table>
