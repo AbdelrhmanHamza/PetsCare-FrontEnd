@@ -11,5 +11,9 @@ export class FilterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  applyFilter():void{
+    alert("filtered");
+
+}
 
 }
