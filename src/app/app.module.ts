@@ -19,6 +19,7 @@ import { FilterComponent } from './client/clientBrowsing/filter/filter.component
 import { CardComponent } from './client/clientBrowsing/card/card.component';
 import { PaginationComponent } from './client/clientBrowsing/pagination/pagination.component';
 import { ContainerComponent } from './client/clientBrowsing/container/container.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ContainerComponent } from './client/clientBrowsing/container/container.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
