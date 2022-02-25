@@ -15,6 +15,7 @@ import { ContactDetailsComponent } from './pages/contact/contact-details/contact
 import { RegisterationComponent } from './pages/registeration/registeration.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
+import { BusinessProfileComponent } from './business/business-profile/business-profile.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomeContainerComponent } from './home/home-container/home-container.com
     ContactDetailsComponent,
     RegisterationComponent,
     LoginComponent,
-    HomeContainerComponent
+    HomeContainerComponent,
+    BusinessProfileComponent
   ],
   imports: [
     BrowserModule,
