@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { RegisterationComponent } from './pages/registeration/registeration.comp
 import { LoginComponent } from './pages/login/login.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
 import { BusinessProfileComponent } from './business/business-profile/business-profile.component';
+import { AddBusinessProfileFormComponent } from './business/add-business-profile-form/add-business-profile-form.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,13 @@ import { BusinessProfileComponent } from './business/business-profile/business-p
     RegisterationComponent,
     LoginComponent,
     HomeContainerComponent,
-    BusinessProfileComponent
+    BusinessProfileComponent,
+    AddBusinessProfileFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
