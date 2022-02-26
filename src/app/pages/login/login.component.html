@@ -1,32 +1,82 @@
 <div class="container-fluid pt-5">
-    <div class="container">
-        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-            <!-- <h6 class="text-primary text-uppercase">Sign Up</h6> -->
-            <h1 class="display-5 text-uppercase mb-0">Login </h1>
-        </div>
-        <div class="row g-5">
-            <div class="col-lg-7">
-                <form action="" method="post">
-                    <div class="row g-3">
-
-                        <!-- Emial -->
-                        <div class="col-12">
-                            <input type="email" name="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;">
-                        </div>
-                        <!-- Password -->
-                        <div class="col-12">
-                            <input type="password" name="password" class="form-control bg-light border-0 px-4" placeholder=" Enter a Password" style="height: 55px;">
-                        </div>
-
-                        <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" name="login" type="submit">login</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-5">
-                <img src="../../../assets//img/login.jpeg" alt="">
-            </div>
-        </div>
+  <div class="container">
+    <div
+      class="border-start border-5 border-primary ps-5 mb-5"
+      style="max-width: 600px"
+    >
+      <!-- <h6 class="text-primary text-uppercase">Sign Up</h6> -->
+      <h1 class="display-5 text-uppercase mb-0">Login</h1>
     </div>
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <form
+          name="form"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate
+        >
+          <div class="row g-3">
+            <!-- Emial -->
+            <div class="col-12">
+              <input
+                name="email"
+                [(ngModel)]="form.email"
+                required
+                #username="ngModel"
+                type="email"
+                name="email"
+                class="form-control bg-light border-0 px-4"
+                placeholder="Your Email"
+                style="height: 55px"
+              />
+              <div
+                class="alert alert-danger"
+                role="alert"
+                *ngIf="username.errors && f.submitted"
+              >
+                Username is required!
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="col-12">
+              <input
+                type="password"
+                name="password"
+                class="form-control bg-light border-0 px-4"
+                placeholder=" Enter a Password"
+                style="height: 55px"
+                [(ngModel)]="form.password"
+                required
+                minlength="3"
+                #password="ngModel"
+              />
+              <div
+                class="alert alert-danger"
+                role="alert"
+                *ngIf="password.errors && f.submitted"
+              >
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <button
+                class="btn btn-primary w-100 py-3"
+                name="login"
+                type="submit" >
+                login
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- <div class="col-lg-5">
+        <img src="../../../assets//img/login.jpeg" alt="" />
+      </div> -->
+    </div>
+  </div>
 </div>
