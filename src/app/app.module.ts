@@ -16,6 +16,10 @@ import { ContactDetailsComponent } from './pages/contact/contact-details/contact
 import { RegisterationComponent } from './pages/registeration/registeration.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
+import { FilterComponent } from './client/clientBrowsing/filter/filter.component';
+import { CardComponent } from './client/clientBrowsing/card/card.component';
+import { PaginationComponent } from './client/clientBrowsing/pagination/pagination.component';
+import { ContainerComponent } from './client/clientBrowsing/container/container.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -32,7 +36,11 @@ import { FormsModule } from '@angular/forms';
     ContactDetailsComponent,
     RegisterationComponent,
     LoginComponent,
-    HomeContainerComponent
+    HomeContainerComponent,
+    FilterComponent,
+    CardComponent,
+    PaginationComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
