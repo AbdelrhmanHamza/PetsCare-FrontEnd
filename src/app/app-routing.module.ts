@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContainerComponent } from './client/clientBrowsing/container/container.component';
 import { AboutComponent } from './home/about/about.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
 import { ServicesComponent } from './home/services/services.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'sign-up', component:RegisterationComponent},
   { path:'login', component:LoginComponent},
   {path:'services', component:ServicesComponent},
-  { path:'about-us', component:AboutComponent}
+  { path:'about-us', component:AboutComponent},
+  { path:'business', component:ContainerComponent}
 ];
 
 @NgModule({
