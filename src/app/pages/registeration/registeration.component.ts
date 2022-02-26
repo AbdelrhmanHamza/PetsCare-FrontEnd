@@ -1,6 +1,8 @@
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from './../../models/user.model';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-registeration',
@@ -11,18 +13,23 @@ export class RegisterationComponent implements OnInit {
   form: any = {
     email: null,
     password: null,
-    user_name : null,
-    type:null
+    user_name: null,
+    type: null
   };
-  constructor( private authService: AuthService) { }
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+  constructor(private authService: AuthService, private router: Router, private tokenStorage: TokenStorageService,
+
+  ) { }
 
   ngOnInit(): void {
 
   }
+
   onSubmit(): void {
-    // const { email, user_name,password,password_confirmation,type } = this.form;
     console.log(this.form);
-    let user:User = {
+    let user: User = {
       email: this.form.email,
       password: this.form.password,
       user_name: this.form.user_name,
@@ -30,9 +37,17 @@ export class RegisterationComponent implements OnInit {
       password_confirmation: this.form.password_confirmation
     }
     this.authService.register(user).subscribe(
-      (data) => {},
+      (data) => {
+        console.log(data);
+        this.tokenStorage.saveToken(data.access_token);
+        this.isSignUpFailed = false;
+        this.isSuccessful = true;
+        this.router.navigate(['/']);
+      },
       (err) => {
-        console.log(err.error.email);
+        console.log(err.error);
+        this.isSignUpFailed = true;
+        this.isSuccessful = false;
       }
     );
   }

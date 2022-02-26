@@ -15,27 +15,51 @@
             </div>
             <!-- Emial -->
             <div class="col-12">
-              <input type="email" name="email" [(ngModel)]="form.email" required  #username="ngModel" class="form-control bg-light border-0 px-4" placeholder="Your Email"
-                style="height: 55px" />
+              <input type="email" name="email" [(ngModel)]="form.email" required #email="ngModel"
+                class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px" />
             </div>
             <!-- Password -->
             <div class="col-12">
-              <input type="password" name="password" [(ngModel)]="form.password" required  #username="ngModel" class="form-control bg-light border-0 px-4"
-                placeholder=" Enter a Password" style="height: 55px" />
+              <input type="password" name="password" [(ngModel)]="form.password"
+                class="form-control bg-light border-0 px-4" placeholder=" Enter a Password" style="height: 55px"
+                required #password="ngModel" />
+              <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors.required">Password is required</div>
+              </div>
             </div>
             <!-- Password confirmation-->
             <div class="col-12">
-              <input type="password" name="password_confirmation" [(ngModel)]="form.password_confirmation"  #username="ngModel" required class="form-control bg-light border-0 px-4"
+              <input type="password" name="password_confirmation" [(ngModel)]="form.password_confirmation"
+                #confirmPassword="ngModel" required class="form-control bg-light border-0 px-4"
                 placeholder="Confirm your Password" style="height: 55px" />
+              <div class="alert-danger" *ngIf="confirmPassword.errors && f.submitted ">
+                <div *ngIf="confirmPassword.errors.required">Confirm Password is required</div>
+              </div>
+              <div class="alert-danger" *ngIf="confirmPassword.value != password.value">
+                Password doesn't match
+              </div>
             </div>
             <!-- Phone-->
             <div class="col-12">
-              <input type="text" name="phone" [(ngModel)]="form.phone" required  #username="ngModel" class="form-control bg-light border-0 px-4" placeholder="Enter your phone"
-                style="height: 55px" />
+              <input type="text" name="phone" [(ngModel)]="form.phone" required #username="ngModel"
+                class="form-control bg-light border-0 px-4" placeholder="Enter your phone" style="height: 55px" />
             </div>
-            <div class="col-12">
-              <input type="checkbox" name="type" [(ngModel)]="form.type" hidden  #username="ngModel" value="business" required class="form-control bg-light border-0 px-4" placeholder="Enter your phone"
-                style="height: 55px" />
+            <!-- Type -->
+            <div class="col-12 d-flex inline">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" [(ngModel)]="form.type" name="flexRadioDefault"
+                  id="business" value="Business">
+                <label class="form-check-label" for="business">
+                  Business
+                </label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="radio" [(ngModel)]="form.type" name="flexRadioDefault" id="client"
+                  value="Client" checked>
+                <label class="form-check-label" for="client">
+                  Client
+                </label>
+              </div>
             </div>
             <!-- upload a photo -->
             <div class="col-12">
