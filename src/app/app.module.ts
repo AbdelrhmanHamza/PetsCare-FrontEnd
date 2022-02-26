@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
+import { FilterComponent } from './client/clientBrowsing/filter/filter.component';
+import { CardComponent } from './client/clientBrowsing/card/card.component';
+import { PaginationComponent } from './client/clientBrowsing/pagination/pagination.component';
+import { ContainerComponent } from './client/clientBrowsing/container/container.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,11 +40,17 @@ import { BusinessRequestsTabComponent } from './Business/business-requests-tab/b
     LoginComponent,
     HomeContainerComponent,
     BusinessSubscriptionTabComponent,
-    BusinessRequestsTabComponent
+    BusinessRequestsTabComponent,
+    FilterComponent,
+    CardComponent,
+    PaginationComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

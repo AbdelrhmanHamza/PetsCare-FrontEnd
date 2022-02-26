@@ -1,49 +1,78 @@
 <div class="container-fluid pt-5">
-    <div class="container">
-        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-            <h6 class="text-primary text-uppercase">Sign Up</h6>
-            <h1 class="display-5 text-uppercase mb-0">Registeration </h1>
-        </div>
-        <div class="row g-5">
-            <div class="col-lg-7">
-                <form action="" method="post">
-                    <div class="row g-3">
-                        <!-- Name -->
-                        <div class="col-12">
-                            <input type="text" name="name" class="form-control bg-light border-0 px-4" placeholder="Your Name" style="height: 55px;">
-                        </div>
-                        <!-- Emial -->
-                        <div class="col-12">
-                            <input type="email" name="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;">
-                        </div>
-                        <!-- Password -->
-                        <div class="col-12">
-                            <input type="password" name="password" class="form-control bg-light border-0 px-4" placeholder=" Enter a Password" style="height: 55px;">
-                        </div>
-                        <!-- Password confirmation-->
-                        <div class="col-12">
-                            <input type="password" name="password_confirmation" class="form-control bg-light border-0 px-4" placeholder="Confirm your Password" style="height: 55px;">
-                        </div>
-                        <!-- Phone-->
-                        <div class="col-12">
-                            <input type="text" name="phone" class="form-control bg-light border-0 px-4" placeholder="Enter your phone" style="height: 55px;">
-                        </div>
-                        <!-- upload a photo -->
-                        <div class="col-12 form-control bg-light border-0 px-4">
-                            <label for="file">Upload your photo </label>
-
-                            <input type="file" id="profile_photo" name="profile_photo ">
-                        </div>
-
-                        <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" name="sign_up" type="submit">Sign Up</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-5">
-                <img src="../../../assets//img/registeration.png" alt="">
-            </div>
-        </div>
+  <div class="container">
+    <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px">
+      <h6 class="text-primary text-uppercase">Sign Up</h6>
+      <h1 class="display-5 text-uppercase mb-0">Registeration</h1>
     </div>
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <div class="row g-3">
+            <!-- Name -->
+            <div class="col-12">
+              <input name="user_name" [(ngModel)]="form.user_name" required #username="ngModel" type="text" name="name"
+                class="form-control bg-light border-0 px-4" placeholder="Your Name" style="height: 55px" />
+            </div>
+            <!-- Emial -->
+            <div class="col-12">
+              <input type="email" name="email" [(ngModel)]="form.email" required #email="ngModel"
+                class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px" />
+            </div>
+            <!-- Password -->
+            <div class="col-12">
+              <input type="password" name="password" [(ngModel)]="form.password"
+                class="form-control bg-light border-0 px-4" placeholder=" Enter a Password" style="height: 55px"
+                required #password="ngModel" />
+              <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors.required">Password is required</div>
+              </div>
+            </div>
+            <!-- Password confirmation-->
+            <div class="col-12">
+              <input type="password" name="password_confirmation" [(ngModel)]="form.password_confirmation"
+                #confirmPassword="ngModel" required class="form-control bg-light border-0 px-4"
+                placeholder="Confirm your Password" style="height: 55px" />
+              <div class="alert-danger" *ngIf="confirmPassword.errors && f.submitted ">
+                <div *ngIf="confirmPassword.errors.required">Confirm Password is required</div>
+              </div>
+              <div class="alert-danger" *ngIf="confirmPassword.value != password.value">
+                Password doesn't match
+              </div>
+            </div>
+            <!-- Phone-->
+            <div class="col-12">
+              <input type="text" name="phone" [(ngModel)]="form.phone" required #username="ngModel"
+                class="form-control bg-light border-0 px-4" placeholder="Enter your phone" style="height: 55px" />
+            </div>
+            <!-- Type -->
+            <div class="col-12 d-flex inline">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" [(ngModel)]="form.type" name="flexRadioDefault"
+                  id="business" value="Business">
+                <label class="form-check-label" for="business">
+                  Business
+                </label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="radio" [(ngModel)]="form.type" name="flexRadioDefault" id="client"
+                  value="Client" checked>
+                <label class="form-check-label" for="client">
+                  Client
+                </label>
+              </div>
+            </div>
+            <!-- upload a photo -->
+            <div class="col-12">
+              <button class="btn btn-primary w-100 py-3" name="sign_up" type="submit">
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-5">
+        <img src="../../../assets//img/registeration.png" alt="" />
+      </div>
+    </div>
+  </div>
 </div>
