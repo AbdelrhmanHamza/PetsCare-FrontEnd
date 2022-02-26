@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,7 @@ import { ContactDetailsComponent } from './pages/contact/contact-details/contact
 import { RegisterationComponent } from './pages/registeration/registeration.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { HomeContainerComponent } from './home/home-container/home-container.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
