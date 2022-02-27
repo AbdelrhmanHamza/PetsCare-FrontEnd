@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BusinessRequest } from 'src/app/_models/businessRequest.mode';
+import { BusinessRequest } from 'src/app/models/businessRequest.mode';
 
 @Component({
   selector: 'app-business-requests-tab',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AddBusinessForm } from 'src/app/_model/add-business-form';
+import { AddBusinessForm } from 'src/app/models/add-business-form';
 @Component({
   selector: 'app-add-business-profile-form',
   templateUrl: './add-business-profile-form.component.html',
@@ -64,7 +64,7 @@ export class AddBusinessProfileFormComponent implements OnInit {
       let registerModel:AddBusinessForm =<AddBusinessForm>this.registForm.value;
       //call api
       console.log(registerModel);
-      
+
     //  console.log(this.registForm.value);
      }
 }
