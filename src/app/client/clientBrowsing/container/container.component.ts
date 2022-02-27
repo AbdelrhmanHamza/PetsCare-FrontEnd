@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Bussiness } from 'src/app/models/service.model';
 import { BusinessService } from 'src/app/services/business.service';
-import { Bussiness } from 'src/app/_models/service.model';
+
 
 @Component({
   selector: 'app-container',

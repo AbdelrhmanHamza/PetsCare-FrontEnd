@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BusinessSubsciption } from 'src/app/_models/businessSubscription.model';
+import { BusinessSubsciption } from 'src/app/models/businessSubscription.model';
 
 @Component({
   selector: 'app-business-subscription-tab',
