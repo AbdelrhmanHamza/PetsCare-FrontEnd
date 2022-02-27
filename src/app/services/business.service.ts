@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Filters } from '../models/filters.model';
 import { TokenStorageService } from './token-storage.service';
 
-const AUTH_API = 'http://petscare.test/api/';
+const AUTH_API = 'http://petscare.test:8089/api/';
 
 @Injectable({
   providedIn: 'root'
