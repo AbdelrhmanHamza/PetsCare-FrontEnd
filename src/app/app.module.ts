@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -18,6 +19,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
 import { BusinessProfileComponent } from './business/business-profile/business-profile.component';
 import { AddBusinessProfileFormComponent } from './business/add-business-profile-form/add-business-profile-form.component';
+import { FilterComponent } from './client/clientBrowsing/filter/filter.component';
+import { CardComponent } from './client/clientBrowsing/card/card.component';
+import { PaginationComponent } from './client/clientBrowsing/pagination/pagination.component';
+import { ContainerComponent } from './client/clientBrowsing/container/container.component';
+import { FormsModule } from '@angular/forms';
+import { BusinessRequestsTabComponent } from './business/business-requests-tab/business-requests-tab.component';
+import { BusinessSubscriptionTabComponent } from './business/business-subscription-tab/business-subscription-tab.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +43,20 @@ import { AddBusinessProfileFormComponent } from './business/add-business-profile
     LoginComponent,
     HomeContainerComponent,
     BusinessProfileComponent,
-    AddBusinessProfileFormComponent
+    AddBusinessProfileFormComponent,
+    BusinessSubscriptionTabComponent,
+    BusinessRequestsTabComponent,
+    FilterComponent,
+    CardComponent,
+    PaginationComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

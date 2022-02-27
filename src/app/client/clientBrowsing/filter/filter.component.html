@@ -1,0 +1,106 @@
+<!-- filters -->
+
+<h4>
+    Filters
+</h4>
+<form (ngSubmit)="applyFilter()" #filterForm="ngForm" class="col-12">
+    <!-- By Price -->
+    <div class="row">
+        <span class="col-12">
+              <strong class="text-primary">By Price </strong>
+         </span>
+        <br>
+        <div class="col-3">
+            <span>From</span>
+            <div class="form-group row">
+                <div class="col-xs-2">
+                    <input class="form-control" id="from-price" name="from-price" placeholder="0" type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <span>To</span>
+            <div class="form-group row">
+                <div class="col-xs-2">
+                    <input class="form-control" id="to-price" name="to-price" placeholder="1000" type="text">
+                </div>
+            </div>
+        </div>
+        <br>
+
+    </div>
+    <br>
+    <!-- By time -->
+    <div class="row">
+        <span class="col-12">
+            <strong class="text-primary">By Time</strong>
+        </span>
+        <br>
+        <div class=" col-3">
+            <span>From</span>
+            <div class="form-group row">
+                <div class="col-xs-2">
+                    <input class="form-control" id="from-time" name="from-time" placeholder="9:00" type="text">
+                </div>
+            </div>
+        </div>
+        <div class=" col-3">
+            <span>To</span>
+            <div class="form-group row">
+                <div class="col-xs-2">
+                    <input class="form-control" id="to-time" name="to-time" placeholder="3:00" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- by address -->
+    <div class="row">
+        <span class="col-12">
+                        <strong class="text-primary">By Address</strong>
+                    </span>
+        <br>
+        <div class=" col-3">
+            <span>City</span>
+            <div class="form-group row">
+                <div class="col-xs-2">
+                    <input class="form-control" id="city" type="text" name="city" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class=" col-3">
+            <span>State</span>
+            <div class="form-group row">
+                <div class="col-xs-2">
+                    <input class="form-control" id="state" type="text" name="state" placeholder="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- by type -->
+    <div class="row">
+        <span class="col-12">
+                       <strong class="text-primary">By Type</strong>
+                      </span>
+        <br>
+        <div class="dropdown col-4">
+            <label class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type
+        </label>
+
+            <select name="type" id="" class="dropdown-menu">
+                    <option value="vets">Vets</option>
+                    <option value="ranch">Ranch</option>
+                    <option value="private">private</option>
+                    <option value="hotel">Hotel</option>
+            </select>
+
+        </div>
+
+
+    </div>
+
+    <br>
+    <button type="submit" class=" btn btn-primary py-2 px-3 mx-5 ">Apply</button>
+</form>
