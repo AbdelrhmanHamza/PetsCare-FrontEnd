@@ -3,7 +3,6 @@
         <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
             <h1 class="display-5 text-uppercase mb-0">Add business</h1>
         </div>
-        {{registForm.value | json}}
         <div class="row g-5">
             <div class="col-lg-7">
                 <form [formGroup]="registForm" (ngSubmit)="getdata()">
@@ -55,13 +54,13 @@
                         <div class="col-12">
                             <div class="form-control bg-light border-0 px-4">Your Business Type :
                                 <br> <input type="radio" formControlName="businesstype" value="vet" name="businesstype">
-                                <label>Vet</label><br>
+                                <label class="px-1">Vet</label><br>
                                 <input type="radio" formControlName="businesstype" value="hotel" name="businesstype">
-                                <label>Hotel</label><br>
+                                <label class="px-1">Hotel</label><br>
                                 <input type="radio" formControlName="businesstype" value="ranch" name="businesstype">
-                                <label>Ranch</label><br>
+                                <label class="px-1">Ranch</label><br>
                                 <input type="radio" formControlName="businesstype" value="private" name="businesstype">
-                                <label>Private</label><br>
+                                <label class="px-1">Private</label><br>
                                 <div [hidden]="businesstype?.valid || businesstype?.untouched" style="color: red;">
                                     <small *ngIf="businesstype?.errors?.['required']">business type is required</small>
                                 </div>

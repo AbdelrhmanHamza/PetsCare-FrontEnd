@@ -1,4 +1,7 @@
-<div class="container">
+<div class="container pt-5">
+  <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+    <h1 class="display-5 text-uppercase mb-0">SUBSCRIPTIONS</h1>
+</div>
     <div class="row">
         <div class="col-9">
             <div class="table-responsive table-striped">
@@ -8,7 +11,7 @@
                             <th>#</th>
                             <th>Package name</th>
                             <th>Created At </th>
-                            <th>Status</th>
+                            <th>Price</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -16,7 +19,7 @@
                             <td>{{package.id}}</td>
                             <td>{{package.packageName}}</td>
                             <td>{{package.createdAt}}</td>
-                            <td>{{package.status}}</td>
+                            <td>{{package.price}}</td>
                         </tr>
                     </tbody>
                 </table>

@@ -26,6 +26,7 @@ import { ContainerComponent } from './client/clientBrowsing/container/container.
 import { FormsModule } from '@angular/forms';
 import { BusinessRequestsTabComponent } from './business/business-requests-tab/business-requests-tab.component';
 import { BusinessSubscriptionTabComponent } from './business/business-subscription-tab/business-subscription-tab.component';
+import { MyBusinessesComponent } from './business/my-businesses/my-businesses.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { BusinessSubscriptionTabComponent } from './business/business-subscripti
     FilterComponent,
     CardComponent,
     PaginationComponent,
-    ContainerComponent
+    ContainerComponent,
+    MyBusinessesComponent
   ],
   imports: [
     BrowserModule,

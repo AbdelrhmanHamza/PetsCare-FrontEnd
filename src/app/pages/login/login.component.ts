@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Router } from '@angular/router';
+import { UserType } from 'src/app/services/enums/user-type';
 
 @Component({
   selector: 'app-login',
@@ -34,6 +35,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
+      let user = this.tokenStorage.getUser();
+      if(user.type === UserType.BUSINESS){
+        this.router.navigate(['/business/my-businesses']);
+      }else
+      this.router.navigate(['/businesses']);
     }
   }
 
@@ -47,7 +53,8 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.tokenStorage.saveUser(data.user);
-        this.router.navigate(['/']);      },
+        this.reloadPage();
+    },
       (err) => {
         console.log(err.error.email);
         this.errorMessage = err.error.message;

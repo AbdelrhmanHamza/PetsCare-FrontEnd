@@ -11,7 +11,7 @@
         <div class="navbar-nav ms-auto py-0">
             <a [routerLinkActive]="['active']" [routerLink]="'/home'" *ngIf="!isLoggedIn" class="nav-item nav-link ">Home</a>
             <a [routerLinkActive]="['active']" [routerLink]="'#'" *ngIf="isLoggedIn"  class="nav-item nav-link px-2 ms-lg-2">profile</a>
-            <a [routerLinkActive]="['active']" [routerLink]="'/business'"  *ngIf="isLoggedIn" class="nav-item nav-link">services </a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/businesses'"  *ngIf="isLoggedIn" class="nav-item nav-link">services </a>
             <a [routerLinkActive]="['active']" [routerLink]="'/about-us'" *ngIf="!isLoggedIn" class="nav-item nav-link">About Us</a>
             <a [routerLinkActive]="['active']" [routerLink]="'/services'" *ngIf="!isLoggedIn" class="nav-item nav-link">Our Services</a>
             <a [routerLinkActive]="['active']" [routerLink]="'/contact-us'" *ngIf="!isLoggedIn" class="nav-item nav-link">Contact us</a>

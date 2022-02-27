@@ -1,47 +1,39 @@
-<div class="container-fluid py-5">
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="" class="navbar-brand ms-lg-5">
-            <h1 class="m-0 text-uppercase text-dark">Name of user</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a [routerLink]="" class="nav-item nav-link active">My Business</a>
-                <a [routerLink]="" class="nav-item nav-link">Requests</a>
-                <a [routerLink]="" class="nav-item nav-link">Subscriptions</a>
-                <a [routerLink]="" class="nav-item nav-link">Add Business +</a>
-                <a [routerLink]="" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log Out <i
-                        class="bi bi-arrow-right"></i></a>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-4">
-                <div class="bg-light text-center pt-5 mt-lg-5" *ngFor="let item of businessprofile">
-                    <img class="img-fluid w-100" src="./../../../assets/img/team-1.jpg" [style]="'background-image: url('+ item +')'">
-                    <div class="text-center p-4">
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span>{{item}}</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span>{{item}}</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span>{{item}}</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span>{{item}}</span>
-                        </div>
-                        <a [routerLink]="" class="btn btn-primary btn-lg">Delete</a>
-                        <a [routerLink]="" class="btn btn-primary btn-lg">Details</a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
+<nav
+  class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0"
+>
+  <a href="" class="navbar-brand ms-lg-5">
+    <h3 class="m-0 text-uppercase text-dark">{{ username }}</h3>
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarCollapse"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav ms-auto py-0">
+      <a [routerLinkActive]="['active']"
+        [routerLink]="'business/my-businesses'"
+        class="nav-item nav-link active"
+        >My Business</a
+      >
+      <a [routerLinkActive]="['active']" [routerLink]="'business/requests'" class="nav-item nav-link"
+        >Requests</a
+      >
+      <a [routerLinkActive]="['active']" [routerLink]="'business/subscription'" class="nav-item nav-link"
+        >Subscriptions</a
+      >
+      <a [routerLinkActive]="['active']" [routerLink]="'business/add'" class="nav-item nav-link"
+        >Add Business +</a
+      >
+      <a
+        [routerLink]="'#'"
+        (click)="logout()"
+        class="nav-item nav-link nav-contact bg-danger text-white px-5 ms-lg-5"
+        ><i class="bi bi-person-fill"></i> logout
+      </a>
     </div>
-</div>
+  </div>
+</nav>
