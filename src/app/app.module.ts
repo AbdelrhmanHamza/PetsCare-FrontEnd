@@ -24,9 +24,9 @@ import { CardComponent } from './client/clientBrowsing/card/card.component';
 import { PaginationComponent } from './client/clientBrowsing/pagination/pagination.component';
 import { ContainerComponent } from './client/clientBrowsing/container/container.component';
 import { FormsModule } from '@angular/forms';
-import { BusinessRequestsTabComponent } from './business/business-requests-tab/business-requests-tab.component';
-import { BusinessSubscriptionTabComponent } from './business/business-subscription-tab/business-subscription-tab.component';
-import { MyBusinessesComponent } from './business/my-businesses/my-businesses.component';
+import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
+import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
+import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
 
 @NgModule({
   declarations: [
