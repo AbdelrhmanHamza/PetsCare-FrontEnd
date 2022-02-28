@@ -28,6 +28,7 @@ import { BusinessRequestsTabComponent } from './Business/business-requests-tab/b
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
 import { BusinessGalleryPreviewComponent } from './Business/business-gallery-preview/business-gallery-preview.component';
+import { BusinessUpdateFormComponent } from './Business/business-update-form/business-update-form.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { BusinessGalleryPreviewComponent } from './Business/business-gallery-pre
     PaginationComponent,
     ContainerComponent,
     MyBusinessesComponent,
-    BusinessGalleryPreviewComponent
+    BusinessGalleryPreviewComponent,
+    BusinessUpdateFormComponent
   ],
   imports: [
     BrowserModule,
