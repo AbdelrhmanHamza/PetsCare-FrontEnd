@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
+import { BusinessGalleryPreviewComponent } from './Business/business-gallery-preview/business-gallery-preview.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.co
     CardComponent,
     PaginationComponent,
     ContainerComponent,
-    MyBusinessesComponent
+    MyBusinessesComponent,
+    BusinessGalleryPreviewComponent
   ],
   imports: [
     BrowserModule,
