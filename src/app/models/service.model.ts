@@ -6,8 +6,8 @@ export interface Bussiness {
   closesAt: string,
   package_name?: string,
   phone_number?: string,
-  package_description?: string
-  package_price?: string
+  package_description?: string,
+  package_price?: string,
   address?: string
 
 }
