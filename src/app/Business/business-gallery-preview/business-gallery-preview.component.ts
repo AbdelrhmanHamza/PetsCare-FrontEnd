@@ -39,11 +39,11 @@ open(name: string) { this._modalService.open(MODALS[name]); }
   template: `
 
   
-  <div class="modal-body">
+  <div style="margin-top=25%" class="modal-body">
     Are you sure you want to delete this picture?
 
   </div>
-  <div class="modal-footer">
+  <div  class="modal-footer">
     <button type="button" class="btn btn-danger" (click)="modal.dismiss('cancel click')">Cancel</button>
     <button type="button" ngbAutofocus class="btn btn-primary btn-outline-primary" (click)="modal.close('Ok click')">Ok</button>
   </div>
