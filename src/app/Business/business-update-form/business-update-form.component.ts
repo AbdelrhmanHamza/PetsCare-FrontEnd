@@ -75,7 +75,7 @@ export class BusinessUpdateFormComponent implements OnInit {
   
     ngOnInit(): void {
     }
-    getdata(){
+    getAndPostData(){
       let registerModel:AddBusinessForm =<AddBusinessForm>this.registForm.value;
       //call api
       console.log(registerModel);

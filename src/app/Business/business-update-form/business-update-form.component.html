@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="row g-5">
-        <div class="col-lg-9">
-            <form [formGroup]="registForm" (ngSubmit)="getdata()">
+    <div class="row ">
+        <div class=" ms-5 col-lg-10">
+            <form [formGroup]="registForm" (ngSubmit)="getAndPostData()">
                 <div class="row g-3">
                     <div class="col-12">
                         <input type="text" formControlName="businessname" class="form-control bg-light border-0 px-4" name="businessname" placeholder="Your business name">
@@ -71,20 +71,20 @@
                     </div>
                     <div class="col-12" class="form-control bg-light border-0 px-4">
                         <label for="openat">Open At : </label> <br>
-                        <input id="openat" type="time" name="openat" formControlName="openat">
+                        <input id="openat" type="text" name="openat" formControlName="openat">
                         <div [hidden]="openat?.valid || openat?.untouched" style="color: red;">
                             <small *ngIf="openat?.errors?.['required']">openning time is required</small>
                         </div>
                     </div>
                     <div class="col-12" class="form-control bg-light border-0 px-4">
                         <label for="closeat">Close At : </label> <br>
-                        <input id="closeat" type="time" name="closeat" formControlName="closeat">
+                        <input id="closeat" type="text" name="closeat" formControlName="closeat">
                         <div [hidden]="closeat?.valid || closeat?.untouched" style="color: red;">
                             <small *ngIf="closeat?.errors?.['required']">closing time is required</small>
                         </div>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="registForm.invalid"> Add Business </button>
+                        <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="registForm.invalid"> Update </button>
                     </div>
                 </div>
             </form>
