@@ -29,6 +29,7 @@ import { BusinessSubscriptionTabComponent } from './Business/business-subscripti
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
 import { BusinessGalleryPreviewComponent } from './Business/business-gallery-preview/business-gallery-preview.component';
 import { BusinessUpdateFormComponent } from './Business/business-update-form/business-update-form.component';
+import { BusinessPackagesComponent } from './Business/business-packages/business-packages.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { BusinessUpdateFormComponent } from './Business/business-update-form/bus
     ContainerComponent,
     MyBusinessesComponent,
     BusinessGalleryPreviewComponent,
-    BusinessUpdateFormComponent
+    BusinessUpdateFormComponent,
+    BusinessPackagesComponent
   ],
   imports: [
     BrowserModule,
