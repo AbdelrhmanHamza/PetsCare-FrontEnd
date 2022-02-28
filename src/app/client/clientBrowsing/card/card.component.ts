@@ -25,6 +25,16 @@ export class CardComponent implements OnInit {
     phone_number: "string",
     package_description: "string",
     package_price: "string",
+    address: "string"},
+   { id: 1,
+    name: "string",
+    type:" string",
+    opensAt: "string",
+    closesAt: "string",
+    package_name: "string",
+    phone_number: "string",
+    package_description: "string",
+    package_price: "string",
     address: "string"}
   ];
   ngOnInit(): void {
@@ -54,11 +64,55 @@ export class CardComponent implements OnInit {
   template: `
   <div class="modal-header">
     <h4 class="modal-title" id="modal-title">
-    Doha
+    {{businesses[0].name}}
     </h4>
     <button type="button" class="btn-close" aria-label="Close button" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
+    <p>
+    <span *ngIf="business">
+      Type:
+      </span>
+    <br>
+    <span>
+      Opens At:
+      
+      </span>
+  
+    <br>
+    <span>
+      Closes At:
+      
+      </span>
+  
+    <br>
+    <span>
+      Package Name:
+      
+      </span>
+  
+    <br>
+    <span>
+      Phone Number:
+      
+      </span>
+  
+    <br>
+    <span>
+      
+      Package Description:
+      </span>
+  
+    <br>
+    <span>
+      package Price: L.E
+      
+      </span>
+    <br>
+    <span>
+      Address:
+
+    </span>
 
 
   </div>
@@ -70,6 +124,19 @@ export class CardComponent implements OnInit {
 })
 export class  ServiceCardDetails {
   constructor(public modal: NgbActiveModal) {}
+  @Input() businesses:Bussiness[]=[
+    { id: 1,
+      name: "Doha",
+      type:" string",
+      opensAt: "string",
+      closesAt: "string",
+      package_name: "string",
+      phone_number: "string",
+      package_description: "string",
+      package_price: "string",
+      address: "string"}
+
+  ]
 }
 
 const MODALS: {[name: string]: Type<any>} = {
