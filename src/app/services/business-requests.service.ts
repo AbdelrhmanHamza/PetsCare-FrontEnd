@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { REQ_API } from './enums/env';
+import { TokenStorageService } from './token-storage.service';
 
 
 @Injectable({
