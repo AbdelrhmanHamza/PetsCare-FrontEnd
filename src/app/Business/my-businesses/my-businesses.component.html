@@ -17,7 +17,7 @@
                   <div class="d-flex align-items-center justify-content-between mb-1">
                     <h5 class="text-primary mb-0 mx-2 ">Closes at: {{item.closesAt}}</h5>
                   </div>
-                  <a [routerLink]="" class="btn btn-primary btn-lg mt-2">Details</a>
+                  <a class="btn btn-primary btn-lg mt-2" (click)="onDetails(item.id)">Details</a>
                   <a class="btn btn-danger btn-lg mx-2 mt-2" (click)="onDelete(item.id)">Delete</a>
 
               </div>

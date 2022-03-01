@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Bussiness } from 'app/models/service.model';
 
 @Component({
@@ -8,14 +9,17 @@ import { Bussiness } from 'app/models/service.model';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  constructor(    private router: Router
+    ) { }
 
   @Input ()
   businesses: Bussiness[] = [];
   ngOnInit(): void {
 
   }
-
+  onDetails(id:any){
+    this.router.navigate(['/businesses/details']);
+  }
   showDetails(): void {
     console.log("weeeeeeeeee")
   }

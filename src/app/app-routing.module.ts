@@ -4,8 +4,10 @@ import { AddBusinessProfileFormComponent } from './Business/add-business-profile
 import { BusinessProfileComponent } from './Business/business-profile/business-profile.component';
 import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
+import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
 import { ContainerComponent } from './client/clientBrowsing/container/container.component';
+import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 import { AboutComponent } from './home/about/about.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
 import { ServicesComponent } from './home/services/services.component';
@@ -22,9 +24,11 @@ const routes: Routes = [
   {path:'services', component:ServicesComponent},
   { path:'about-us', component:AboutComponent},
   { path:'businesses', component:ContainerComponent},
+  { path:'businesses/details', component:ServiceDetailsComponent},
   { path:'business/profile', component:BusinessProfileComponent},
   { path:'business/my-businesses', component:MyBusinessesComponent},
   { path:'business/add', component:AddBusinessProfileFormComponent},
+  { path:'business/details', component:BusinessUpdateContainerComponent},
   { path:'business/requests', component:BusinessRequestsTabComponent},
   { path:'business/subscription', component:BusinessSubscriptionTabComponent}
 ];

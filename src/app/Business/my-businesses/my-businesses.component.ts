@@ -57,6 +57,10 @@ export class MyBusinessesComponent implements OnInit {
       );
     }
   }
+  onDetails(id:any){
+    this.router.navigate(['/business/details']);
+
+  }
   onDelete(id:any):void
   {
     this.businessProfileService.deleteBusiness(id).subscribe(
