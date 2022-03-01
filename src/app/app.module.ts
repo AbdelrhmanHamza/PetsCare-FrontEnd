@@ -28,6 +28,8 @@ import { BusinessRequestsTabComponent } from './Business/business-requests-tab/b
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
 import { StripeComponent } from './payment/stripe/stripe.component';
+import { BusinessProfileDetailsComponent } from './Business/business-profile-details/business-profile-details.component';
+import { ClientNavbarProfileButtonComponent } from './client/clientBrowsing/client-navbar-profile-button/client-navbar-profile-button.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { StripeComponent } from './payment/stripe/stripe.component';
     PaginationComponent,
     ContainerComponent,
     MyBusinessesComponent,
-    StripeComponent
+    StripeComponent,
+    BusinessProfileDetailsComponent,
+    ClientNavbarProfileButtonComponent
   ],
   imports: [
     BrowserModule,

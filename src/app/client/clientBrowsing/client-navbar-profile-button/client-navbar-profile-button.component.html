@@ -1,0 +1,302 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+    <a href="index.html" class="navbar-brand ms-lg-5">
+        <h1 class="m-0 text-uppercase text-dark"><i class="fa fa-user-circle" style="font-size:36px"></i>Client Profile
+        </h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+            <a [routerLink]="" class="nav-item nav-link active">Home</a>
+            <a [routerLink]="" class="nav-item nav-link nav-contact btn btn-success text-white px-5 ms-lg-5">Log out <i
+                    class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+<div class="row p-1 m-2">
+    <div class="col-sm-2 bg-light text-white">
+        <div class="container  p-4 m-3">
+            <li type="none"><a [routerLink]="" href="#" class="btn btn-success  m-3 px-5" (click)="mypets()">My Pets</a></li>
+            <li type="none"><a [routerLink]="" href="#" class="btn btn-success  m-3 px-5 " (click)="myrequest()">Request</a></li>
+            <li type="none"><a [routerLink]="" href="#" class="btn btn-success  m-3 px-5" (click)="profile()">profiles</a></li>
+
+        </div>
+    </div>
+    <div class="col-sm-9  ">
+        <!-- content -->
+        <div class="container ">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <div class="bg-light text-center pt-5 mt-lg-5">
+                        <img class="img-fluid w-100" src="../../assets/img/blog-1.jpg">
+                        <div class="text-center p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>HTML5 & CSS3</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Bootstrap v5</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Responsive Layout</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Browsers Compatibility</span>
+
+                            </div>
+                            <div class=" align-items-center justify-content-between ">
+                                <span class="p-2"><a [routerLink]="" href="#" class="btn btn-success " (click)="openScrollableContent(longContent)">Details</a></span>
+                                <span><a  class="btn btn-danger" (click)="openLg(contentt)">Delete</a></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="bg-light text-center pt-5 mt-lg-5">
+                        <img class="img-fluid w-100" src="../../assets/img/blog-1.jpg">
+                        <div class="text-center p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>HTML5 & CSS3</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Bootstrap v5</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Responsive Layout</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Browsers Compatibility</span>
+
+                            </div>
+                            <div class=" align-items-center justify-content-between ">
+                                <span class="p-2"><a [routerLink]="" href="#" class="btn btn-success "
+                                    (click)="openScrollableContent(longContent)">Details</a></span>
+                                <span><a  class="btn btn-danger" (click)="openLg(contentt)">Delete</a></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="bg-light text-center pt-5 mt-lg-5">
+                        <img class="img-fluid w-100" src="../../assets/img/blog-1.jpg">
+                        <div class="text-center p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>HTML5 & CSS3</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Bootstrap v5</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Responsive Layout</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Browsers Compatibility</span>
+
+                            </div>
+                            <div class=" align-items-center justify-content-between ">
+                                <span class="p-2"><a [routerLink]="" href="#" class="btn btn-success "
+                                    (click)="openScrollableContent(longContent)">Details</a></span>
+                                <span><a  class="btn btn-danger" (click)="openLg(contentt)">Delete</a></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="bg-light text-center pt-5 mt-lg-5">
+                        <img class="img-fluid w-100" src="../../assets/img/blog-1.jpg">
+                        <div class="text-center p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>HTML5 & CSS3</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Bootstrap v5</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Responsive Layout</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Browsers Compatibility</span>
+
+                            </div>
+                            <div class=" align-items-center justify-content-between ">
+                                <span class="p-2"><a [routerLink]="" href="#" class="btn btn-success "
+                                    (click)="openScrollableContent(longContent)">Details</a></span>
+                                <span><a  class="btn btn-danger" (click)="openLg(contentt)">Delete</a></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="bg-light text-center pt-5 mt-lg-5">
+                        <img class="img-fluid w-100" src="../../assets/img/blog-1.jpg">
+                        <div class="text-center p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>HTML5 & CSS3</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Bootstrap v5</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Responsive Layout</span>
+
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Browsers Compatibility</span>
+
+                            </div>
+                            <div class=" align-items-center justify-content-between ">
+                                <span class="p-2"><a [routerLink]="" href="#" class="btn btn-success " (click)="openScrollableContent(longContent)">Details</a></span>
+                                <span><a class="btn btn-danger" (click)="openLg(contentt)">Delete</a></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- end of content -->
+    </div>
+    <div class="col-sm-1  text-white">
+        <!-- adding pets -->
+
+        <div class="d-flex flex-row-reverse">
+
+            <span class="px-5 my-5"><a href="#" class="btn btn-success "  (click)="open(content)" [routerLink]="">
+                <i class="fa fa-plus-square-o" style="font-size:36px;"></i></a></span>
+
+        </div>
+        <!-- end adding pets -->
+    </div>
+</div>
+<!-- paggination -->
+<div class="container mt-3">
+    <ul class="pagination justify-content-end ">
+        <!-- [routerLink]=""  -->
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+    </ul>
+</div>
+<!-- end of paggination -->
+<!-- show adding button -->
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title text-success"  id="modal-basic-title">Adding your pets</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        
+        <form>
+            <div class="form-group">
+                <label class="text-success" for="formGroupExampleInput">Image</label>
+                <input type="file" class="form-control" id="formGroupExampleInput" placeholder="input1">
+              </div>
+            <div class="form-group">
+              <label  class="text-success" for="formGroupExampleInput">label1</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="input2">
+            </div>
+            <div class="form-group">
+              <label class="text-success" for="formGroupExampleInput2"> label2</label>
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="input3">
+            </div>
+            <div class="form-group">
+                <label class="text-success" for="formGroupExampleInput2">label3</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="input4">
+              </div>
+              <div class="form-group">
+                <label class="text-success" for="formGroupExampleInput2">label4</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="input5">
+              </div>
+          </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="c('Save click')">Save</button>
+    </div>
+  </ng-template>
+  <!--  end show adding button -->
+<!-- show details -->
+  <ng-template #longContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">More Details</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="bg-light text-center pt-5 mt-lg-5">
+            <img class="img-fluid w-100" src="../../assets/img/blog-1.jpg">
+            <div class="text-center p-4">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                    <span>HTML5 & CSS3</span>
+
+                </div>
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                    <span>Bootstrap v5</span>
+
+                </div>
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                    <span>Responsive Layout</span>
+
+                </div>
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                    <span>Browsers Compatibility</span>
+
+                </div>
+            
+            </div>
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  <!-- end show details -->
+<!-- delete button -->
+  <ng-template #contentt let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Are you sure you want to delete this package </h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="modal.ok('Close ok')">ok</button>
+      <button type="button" class="btn btn-danger" (click)="modal.close('Close click')">cancel</button>
+    </div>
+  </ng-template>
+  <!-- end of delete button -->
+
