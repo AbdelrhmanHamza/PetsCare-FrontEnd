@@ -24,6 +24,8 @@ import { CardComponent } from './client/clientBrowsing/card/card.component';
 import { PaginationComponent } from './client/clientBrowsing/pagination/pagination.component';
 import { ContainerComponent } from './client/clientBrowsing/container/container.component';
 import { FormsModule } from '@angular/forms';
+import { BusinessProfileDetailsComponent } from './business/business-profile-details/business-profile-details.component';
+import { ClientNavbarProfileComponent } from './client-profile/client-navbar-profile/client-navbar-profile.component';
 import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
@@ -52,6 +54,8 @@ import { StripeComponent } from './payment/stripe/stripe.component';
     CardComponent,
     PaginationComponent,
     ContainerComponent,
+    BusinessProfileDetailsComponent,
+    ClientNavbarProfileComponent,
     MyBusinessesComponent,
     StripeComponent
   ],
