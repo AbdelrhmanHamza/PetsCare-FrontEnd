@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { BusinessProfileService } from 'src/app/services/business-profile.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AddBusinessForm } from 'src/app/models/add-business-form';
+import { AddBusinessForm } from 'app/models/add-business-form';
+import { BusinessProfileService } from 'app/services/business-profile.service';
 @Component({
   selector: 'app-add-business-profile-form',
   templateUrl: './add-business-profile-form.component.html',

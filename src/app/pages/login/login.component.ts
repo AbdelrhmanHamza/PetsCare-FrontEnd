@@ -1,9 +1,9 @@
 import { User } from './../../models/user.model';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Router } from '@angular/router';
-import { UserType } from 'src/app/services/enums/user-type';
+import { AuthService } from 'app/services/auth.service';
+import { UserType } from 'app/services/enums/user-type';
+import { TokenStorageService } from 'app/services/token-storage.service';
 
 @Component({
   selector: 'app-login',
