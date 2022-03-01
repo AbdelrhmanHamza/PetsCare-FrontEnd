@@ -29,6 +29,7 @@ import { BusinessSubscriptionTabComponent } from './Business/business-subscripti
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
 import { StripeComponent } from './payment/stripe/stripe.component';
 import { ClientNavbarProfileButtonComponent } from './client/clientBrowsing/client-navbar-profile-button/client-navbar-profile-button.component';
+import { BusinessProfileDetailsComponent } from './Business/business-profile-details/business-profile-details.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ClientNavbarProfileButtonComponent } from './client/clientBrowsing/clie
     ContainerComponent,
     MyBusinessesComponent,
     StripeComponent,
-    ClientNavbarProfileButtonComponent
+    ClientNavbarProfileButtonComponent,
+    BusinessProfileDetailsComponent
   ],
   imports: [
     BrowserModule,
