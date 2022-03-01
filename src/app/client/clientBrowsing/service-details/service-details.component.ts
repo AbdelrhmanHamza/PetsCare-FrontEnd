@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Bussiness } from 'src/app/models/service.model';
+import { Bussiness } from 'app/models/service.model';
 export interface ImagesUrls{
   src:string
 }
@@ -15,10 +15,10 @@ export class ServiceDetailsComponent implements OnInit {
     {src:"../../../../assets/img/team-2.jpg"},
     {src:"../../../../assets/img/blog-1.jpg"},
     {src:"../../../../assets/img/blog-2.jpg"},
- 
+
   ]
 serviceDetails:Bussiness={
- 
+
   name: "Doha",
   type: "Vet",
   opensAt: "always opened",
@@ -28,7 +28,7 @@ serviceDetails:Bussiness={
   package_description: "isn't it obvious ?? >(",
   package_price: "msh el price nuber leh 3amleno string ",
   address: "Hereeeeeeeeeeeeeeeeeeeeee"
-  
+
 }
   constructor() { }
 

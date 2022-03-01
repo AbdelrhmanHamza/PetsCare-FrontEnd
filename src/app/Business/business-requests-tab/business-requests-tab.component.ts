@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BusinessRequest } from 'src/app/models/businessRequest.mode';
-import { BusinessProfileService } from 'src/app/services/business-profile.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { BusinessRequest } from 'app/models/businessRequest.mode';
+import { BusinessRequestsService } from 'app/services/business-requests.service';
+import { TokenStorageService } from 'app/services/token-storage.service';
 
 @Component({
   selector: 'app-business-requests-tab',
@@ -13,7 +13,7 @@ export class BusinessRequestsTabComponent implements OnInit {
 
   constructor(
     private tokenStorage: TokenStorageService,
-    private businessProfileService: BusinessProfileService,
+    private businessProfileService: BusinessRequestsService,
     private router: Router
   ) {}
   requests: BusinessRequest[] = [];
