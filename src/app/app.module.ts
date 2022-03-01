@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
+import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 import { StripeComponent } from './payment/stripe/stripe.component';
 
 @NgModule({
@@ -53,6 +54,7 @@ import { StripeComponent } from './payment/stripe/stripe.component';
     PaginationComponent,
     ContainerComponent,
     MyBusinessesComponent,
+    ServiceDetailsComponent,
     StripeComponent
   ],
   imports: [
