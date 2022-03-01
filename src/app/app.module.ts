@@ -28,6 +28,8 @@ import { BusinessRequestsTabComponent } from './Business/business-requests-tab/b
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
+import { ClientRequestComponent } from './client/clientBrowsing/client-request/client-request.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -53,14 +55,16 @@ import { ServiceDetailsComponent } from './client/clientBrowsing/service-details
     PaginationComponent,
     ContainerComponent,
     MyBusinessesComponent,
-    ServiceDetailsComponent
+    ServiceDetailsComponent,
+    ClientRequestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

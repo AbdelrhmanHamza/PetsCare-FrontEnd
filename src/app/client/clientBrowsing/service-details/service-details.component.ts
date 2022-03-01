@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bussiness } from 'src/app/models/service.model';
+import { MatDialogRef, MatDialog } from '@angular/material/dialog';
+import {ClientRequestComponent} from '../client-request/client-request.component'
 export interface ImagesUrls{
   src:string
 }
@@ -30,7 +32,7 @@ serviceDetails:Bussiness={
   address: "Hereeeeeeeeeeeeeeeeeeeeee"
   
 }
-  constructor() { }
+  constructor( private matDialog: MatDialog,) { }
 
   ngOnInit(): void {
   }
