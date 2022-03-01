@@ -28,6 +28,7 @@ import { BusinessRequestsTabComponent } from './Business/business-requests-tab/b
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
+import { StripeComponent } from './payment/stripe/stripe.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ServiceDetailsComponent } from './client/clientBrowsing/service-details
     PaginationComponent,
     ContainerComponent,
     MyBusinessesComponent,
-    ServiceDetailsComponent
+    ServiceDetailsComponent,
+    StripeComponent
   ],
   imports: [
     BrowserModule,
