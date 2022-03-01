@@ -27,10 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
-import { BusinessGalleryPreviewComponent } from './business/business-gallery-preview/business-gallery-preview.component';
-import { BusinessPackagesComponent } from './business/business-packages/business-packages.component';
-import { BusinessUpdateContainerComponent } from './business/business-update-container/business-update-container.component';
-import { BusinessUpdateFormComponent } from './business/business-update-form/business-update-form.component';
+import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 
 @NgModule({
   declarations: [
@@ -56,10 +53,7 @@ import { BusinessUpdateFormComponent } from './business/business-update-form/bus
     PaginationComponent,
     ContainerComponent,
     MyBusinessesComponent,
-    BusinessGalleryPreviewComponent,
-    BusinessUpdateFormComponent,
-    BusinessPackagesComponent,
-    BusinessUpdateContainerComponent
+    ServiceDetailsComponent
   ],
   imports: [
     BrowserModule,

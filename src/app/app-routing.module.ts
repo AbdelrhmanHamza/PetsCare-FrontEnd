@@ -14,19 +14,19 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterationComponent } from './pages/registeration/registeration.component';
 
 const routes: Routes = [
-  // {path:'home', component:HomeContainerComponent},
-  // { path:'',redirectTo:'/home',pathMatch:'full'},
-  // {path:'contact-us',component:ContactContainerComponent},
-  // {path:'sign-up', component:RegisterationComponent},
-  // { path:'login', component:LoginComponent},
-  // {path:'services', component:ServicesComponent},
-  // { path:'about-us', component:AboutComponent},
-  // { path:'businesses', component:ContainerComponent},
-  // { path:'business/profile', component:BusinessProfileComponent},
-  // { path:'business/my-businesses', component:MyBusinessesComponent},
-  // { path:'business/add', component:AddBusinessProfileFormComponent},
-  // { path:'business/requests', component:BusinessRequestsTabComponent},
-  // { path:'business/subscription', component:BusinessSubscriptionTabComponent}
+  {path:'home', component:HomeContainerComponent},
+  { path:'',redirectTo:'/home',pathMatch:'full'},
+  {path:'contact-us',component:ContactContainerComponent},
+  {path:'sign-up', component:RegisterationComponent},
+  { path:'login', component:LoginComponent},
+  {path:'services', component:ServicesComponent},
+  { path:'about-us', component:AboutComponent},
+  { path:'businesses', component:ContainerComponent},
+  { path:'business/profile', component:BusinessProfileComponent},
+  { path:'business/my-businesses', component:MyBusinessesComponent},
+  { path:'business/add', component:AddBusinessProfileFormComponent},
+  { path:'business/requests', component:BusinessRequestsTabComponent},
+  { path:'business/subscription', component:BusinessSubscriptionTabComponent}
 ];
 
 @NgModule({
