@@ -23,18 +23,6 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <input type="text" formControlName="city" class="form-control bg-light border-0 px-4" name="city" placeholder="city">
-                        <div [hidden]="city?.valid || city?.untouched" style="color: red;">
-                            <small *ngIf="city?.errors?.['required']">city is required</small>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <input type="text" formControlName="state" class="form-control bg-light border-0 px-4" name="state" placeholder="state">
-                        <div [hidden]="state?.valid || state?.untouched" style="color: red;">
-                            <small *ngIf="state?.errors?.['required']">state is required</small>
-                        </div>
-                    </div>
-                    <div class="col-12">
                         <input type="text" formControlName="address" class="form-control bg-light border-0 px-4" name="address" placeholder="address">
                         <div [hidden]="address?.valid || address?.untouched" style="color: red;">
                             <small *ngIf="address?.errors?.['required']">Address is required</small>
@@ -54,20 +42,7 @@
                                 <small *ngIf="businesstype?.errors?.['required']">business type is required</small>
                             </div>
                         </div>
-                        <!-- <div class="col-12" *ngIf="pay?.value=='visa'">
-                                <input type="text" formControlName="payinput1"
-                                    class="form-control bg-light border-0 px-4"
-                                    placeholder="payment method input here 1" style="height: 55px;" name="payinput1">
-                                <input type="text" formControlName="payinput2"
-                                    class="form-control bg-light border-0 px-4"
-                                    placeholder="payment method input here 2" style="height: 55px;" name="payinput2">
-                                <input type="text" formControlName="payinput3"
-                                    class="form-control bg-light border-0 px-4"
-                                    placeholder="payment method input here 3" style="height: 55px;" name="payinput3">
-                                <input type="text" formControlName="payinput4"
-                                    class="form-control bg-light border-0 px-4"
-                                    placeholder="payment method input here 4" style="height: 55px;" name="payinput4">
-                            </div> -->
+
                     </div>
                     <div class="col-12" class="form-control bg-light border-0 px-4">
                         <label for="openat">Open At : </label> <br>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AddBusinessForm } from 'src/app/models/add-business-form';
+import { AddBusinessForm } from 'app/models/add-business-form';
 
 
 
@@ -11,76 +11,57 @@ import { AddBusinessForm } from 'src/app/models/add-business-form';
 })
 export class BusinessUpdateFormComponent implements OnInit {
   businessDetails:AddBusinessForm={
-    businessname:"Doha",
-    description:"Da7do7a",
-    businesstype:"Vet",
-    phoneNum:"0100165464",
-    city:"Alex",
-    state:"Alex2 :P ",
+    business_name:"Doha",
+    service_description:"Da7do7a",
+    business_type:"Vet",
+    phone_number:"0100165464",
     address:"Alex :P :P :P ",
-    openat:"6:00 am",
-    closeat:"7:00 pm"}
-  
-    registForm = new FormGroup({
-      businessname:new FormControl(this.businessDetails.businessname,[Validators.required]),
-      description:new FormControl(this.businessDetails.description,[Validators.required]),
-      businesstype:new FormControl('',[Validators.required]),
-      phoneNum:new FormControl(this.businessDetails.phoneNum,[Validators.required]),
-      city:new FormControl(this.businessDetails.city,[Validators.required]),
-      state: new FormControl(this.businessDetails.state,[Validators.required]),
-      address: new FormControl(this.businessDetails.address,[Validators.required]),
-      openat: new FormControl(this.businessDetails.openat,[Validators.required]),
-      closeat: new FormControl(this.businessDetails.closeat,[Validators.required]),
+    open_at:"6:00 am",
+    close_at:"7:00 pm"}
+
+    registForm =  new FormGroup({
+      business_name: new FormControl('', [Validators.required]),
+      service_description: new FormControl('', [Validators.required]),
+      business_type: new FormControl('', [Validators.required]),
+      phone_number: new FormControl('', [Validators.required]),
+      address: new FormControl('', [Validators.required]),
+      open_at: new FormControl('', [Validators.required]),
+      close_at: new FormControl('', [Validators.required]),
     });
-    get businessname()
-    {
-      return this.registForm.get('businessname');
-    };
-    get description()
-    {
-      return this.registForm.get('description');
-    };
-    get businesstype()
-    {
-      return this.registForm.get('businesstype');
-    };
-    get phoneNum()
-    {
-      return this.registForm.get('phoneNum');
-    };
-    get city()
-    {
-      return this.registForm.get('city');
-    };
-    get state()
-    {
-      return this.registForm.get('state');
-    };
-    get address()
-    {
-      return this.registForm.get('address');
-    };
-    get openat(){
-      return this.registForm.get('openat')
-    };
-    get closeat(){
-      return this.registForm.get('closeat')
-    };
-  
-  
-  
-  
-  
+
+
+
+
     constructor() { }
-  
+
     ngOnInit(): void {
     }
     getAndPostData(){
       let registerModel:AddBusinessForm =<AddBusinessForm>this.registForm.value;
       //call api
       console.log(registerModel);
-  
+
     //  console.log(this.registForm.value);
      }
+     get businessname() {
+      return this.registForm.get('business_name');
+    }
+    get description() {
+      return this.registForm.get('service_description');
+    }
+    get businesstype() {
+      return this.registForm.get('business_type');
+    }
+    get phoneNum() {
+      return this.registForm.get('phone_number');
+    }
+    get address() {
+      return this.registForm.get('address');
+    }
+    get openat() {
+      return this.registForm.get('open_at');
+    }
+    get closeat() {
+      return this.registForm.get('close_at');
+    }
   }
-  

@@ -17,8 +17,8 @@ import { ContactDetailsComponent } from './pages/contact/contact-details/contact
 import { RegisterationComponent } from './pages/registeration/registeration.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
-import { BusinessProfileComponent } from './business/business-profile/business-profile.component';
-import { AddBusinessProfileFormComponent } from './business/add-business-profile-form/add-business-profile-form.component';
+import { BusinessProfileComponent } from './Business/business-profile/business-profile.component';
+import { AddBusinessProfileFormComponent } from './Business/add-business-profile-form/add-business-profile-form.component';
 import { FilterComponent } from './client/clientBrowsing/filter/filter.component';
 import { CardComponent } from './client/clientBrowsing/card/card.component';
 import { PaginationComponent } from './client/clientBrowsing/pagination/pagination.component';

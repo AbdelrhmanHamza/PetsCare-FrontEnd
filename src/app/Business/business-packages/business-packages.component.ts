@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Package } from 'src/app/models/package.model';
+import { Package } from 'app/models/package.model';
 
 @Component({
   selector: 'app-business-packages',
