@@ -1,8 +1,8 @@
-import { AuthService } from 'src/app/services/auth.service';
 import { User } from './../../models/user.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { AuthService } from 'app/services/auth.service';
+import { TokenStorageService } from 'app/services/token-storage.service';
 
 @Component({
   selector: 'app-registeration',

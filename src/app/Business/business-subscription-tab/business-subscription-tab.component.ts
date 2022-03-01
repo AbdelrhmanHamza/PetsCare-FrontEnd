@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BusinessSubsciption } from 'src/app/models/businessSubscription.model';
 import { Router } from '@angular/router';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
-import { BusinessProfileService } from 'src/app/services/business-profile.service';
+import { BusinessSubsciption } from 'app/models/businessSubscription.model';
+import { BusinessProfileService } from 'app/services/business-profile.service';
+import { TokenStorageService } from 'app/services/token-storage.service';
 
 @Component({
   selector: 'app-business-subscription-tab',

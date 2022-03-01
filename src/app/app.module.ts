@@ -31,6 +31,8 @@ import { BusinessGalleryPreviewComponent } from './Business/business-gallery-pre
 import { BusinessUpdateFormComponent } from './Business/business-update-form/business-update-form.component';
 import { BusinessPackagesComponent } from './Business/business-packages/business-packages.component';
 import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
+import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
+import { StripeComponent } from './payment/stripe/stripe.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { BusinessUpdateContainerComponent } from './Business/business-update-con
     BusinessGalleryPreviewComponent,
     BusinessUpdateFormComponent,
     BusinessPackagesComponent,
-    BusinessUpdateContainerComponent
+    BusinessUpdateContainerComponent,
+    ServiceDetailsComponent,
+    StripeComponent
   ],
   imports: [
     BrowserModule,

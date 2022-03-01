@@ -1,8 +1,8 @@
 import { BusinessProfileService } from './../../services/business-profile.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Bussiness } from 'src/app/models/service.model';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { Bussiness } from 'app/models/service.model';
+import { TokenStorageService } from 'app/services/token-storage.service';
 
 @Component({
   selector: 'app-my-businesses',
@@ -26,7 +26,7 @@ export class MyBusinessesComponent implements OnInit {
           console.log(data);
           data.forEach(
             (element: {
-              id: any;
+              id: number;
               business_name: any;
               business_type: any;
               open_at: any;
@@ -56,5 +56,18 @@ export class MyBusinessesComponent implements OnInit {
         }
       );
     }
+  }
+  onDelete(id:any):void
+  {
+    this.businessProfileService.deleteBusiness(id).subscribe(
+
+        (data) => {
+         window.location.reload();
+        },
+        (err) => {
+          console.log(err.error);
+        }
+      );
+
   }
 }

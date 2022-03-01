@@ -1,70 +1,60 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AddBusinessForm } from 'src/app/models/add-business-form';
+import { AddBusinessForm } from 'app/models/add-business-form';
+import { BusinessProfileService } from 'app/services/business-profile.service';
 @Component({
   selector: 'app-add-business-profile-form',
   templateUrl: './add-business-profile-form.component.html',
-  styleUrls: ['./add-business-profile-form.component.scss']
+  styleUrls: ['./add-business-profile-form.component.scss'],
 })
 export class AddBusinessProfileFormComponent implements OnInit {
-  registForm = new FormGroup({
-    businessname:new FormControl('',[Validators.required]),
-    description:new FormControl('',[Validators.required]),
-    businesstype:new FormControl('',[Validators.required]),
-    phoneNum:new FormControl('',[Validators.required]),
-    city:new FormControl('',[Validators.required]),
-    state: new FormControl('',[Validators.required]),
-    address: new FormControl('',[Validators.required]),
-    openat: new FormControl('',[Validators.required]),
-    closeat: new FormControl('',[Validators.required]),
+  newBusiness = new FormGroup({
+    business_name: new FormControl('', [Validators.required]),
+    service_description: new FormControl('', [Validators.required]),
+    business_type: new FormControl('', [Validators.required]),
+    phone_number: new FormControl('', [Validators.required]),
+    address: new FormControl('', [Validators.required]),
+    open_at: new FormControl('', [Validators.required]),
+    close_at: new FormControl('', [Validators.required]),
   });
-  get businessname()
-  {
-    return this.registForm.get('businessname');
-  };
-  get description()
-  {
-    return this.registForm.get('description');
-  };
-  get businesstype()
-  {
-    return this.registForm.get('businesstype');
-  };
-  get phoneNum()
-  {
-    return this.registForm.get('phoneNum');
-  };
-  get city()
-  {
-    return this.registForm.get('city');
-  };
-  get state()
-  {
-    return this.registForm.get('state');
-  };
-  get address()
-  {
-    return this.registForm.get('address');
-  };
-  get openat(){
-    return this.registForm.get('openat')
-  };
-  get closeat(){
-    return this.registForm.get('closeat')
-  };
 
-  constructor() { }
+  constructor(private businessProfileService: BusinessProfileService, private router: Router ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onSubmit() {
+    this.businessProfileService
+      .addBusiness(<AddBusinessForm>this.newBusiness.value)
+      .subscribe(
+        (data) => {
+          this.router.navigate(['/business/my-businesses']);
+        },
+        (err) => {
+          console.log(err.error);
+        }
+      );
   }
 
-
-
-  getdata(){
-      let registerModel:AddBusinessForm =<AddBusinessForm>this.registForm.value;
-      //call api
-      console.log(registerModel);
-
-    //  console.log(this.registForm.value);
-     }
+  get businessname() {
+    return this.newBusiness.get('business_name');
+  }
+  get description() {
+    return this.newBusiness.get('service_description');
+  }
+  get businesstype() {
+    return this.newBusiness.get('business_type');
+  }
+  get phoneNum() {
+    return this.newBusiness.get('phone_number');
+  }
+  get address() {
+    return this.newBusiness.get('address');
+  }
+  get openat() {
+    return this.newBusiness.get('open_at');
+  }
+  get closeat() {
+    return this.newBusiness.get('close_at');
+  }
 }
