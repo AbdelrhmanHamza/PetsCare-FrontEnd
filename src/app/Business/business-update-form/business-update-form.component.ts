@@ -24,7 +24,7 @@ export class BusinessUpdateFormComponent implements OnInit {
     registForm = new FormGroup({
       businessname:new FormControl(this.businessDetails.businessname,[Validators.required]),
       description:new FormControl(this.businessDetails.description,[Validators.required]),
-      businesstype:new FormControl(this.businessDetails.businesstype,[Validators.required]),
+      businesstype:new FormControl('',[Validators.required]),
       phoneNum:new FormControl(this.businessDetails.phoneNum,[Validators.required]),
       city:new FormControl(this.businessDetails.city,[Validators.required]),
       state: new FormControl(this.businessDetails.state,[Validators.required]),
