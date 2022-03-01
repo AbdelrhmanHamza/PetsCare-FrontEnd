@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Package } from 'src/app/models/package.model';
 
 @Component({
   selector: 'app-business-packages',
@@ -8,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class BusinessPackagesComponent implements OnInit {
 
   constructor() { }
+  package:Package={
+    name:"Free",
+    description:"It is called free but you will pay 75% of the fees :P ",
+    price:75
+  }
 
   ngOnInit(): void {
   }
