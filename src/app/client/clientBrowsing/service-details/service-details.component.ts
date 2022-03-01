@@ -34,5 +34,5 @@ serviceDetails:Bussiness={
 
   ngOnInit(): void {
   }
-
+sendRequest():void{}
 }
