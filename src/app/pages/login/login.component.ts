@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Router } from '@angular/router';
+import { UserType } from 'src/app/services/enums/user-type';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
-  roles: string[] = [];
+
   constructor(
     private authService: AuthService,
     private tokenStorage: TokenStorageService,
@@ -34,9 +35,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
-      this.roles = this.tokenStorage.getUser().roles;
+      let user = this.tokenStorage.getUser();
+      if(user.type === UserType.BUSINESS){
+        this.router.navigate(['/business/my-businesses']);
+      }else
+      this.router.navigate(['/businesses']);
     }
   }
+
   onSubmit(): void {
     const { email, password } = this.form;
     this.user.email = email;
@@ -46,8 +52,9 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveToken(data.access_token);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-        this.router.navigate(['/']);      },
+        this.tokenStorage.saveUser(data.user);
+        this.reloadPage();
+    },
       (err) => {
         console.log(err.error.email);
         this.errorMessage = err.error.message;

@@ -1,8 +1,9 @@
-<!-- <app-nav-bar></app-nav-bar> -->
-<app-business-profile-details></app-business-profile-details>
-<!-- <router-outlet> </router-outlet> -->
-<!-- <app-home-container></app-home-container> -->
-<!-- <app-registeration></app-registeration> -->
-<!-- <app-login></app-login> -->
-<!-- <app-contact-container></app-contact-container> -->
+<div *ngIf="!isBusiness; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+    <app-nav-bar></app-nav-bar>
+</ng-template>
+<ng-template #elseBlock>
+    <app-business-profile></app-business-profile>
+</ng-template>
+<router-outlet> </router-outlet>
 <app-footer></app-footer>

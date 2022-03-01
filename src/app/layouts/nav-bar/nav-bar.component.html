@@ -9,15 +9,15 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a [routerLink]="'/home'" class="nav-item nav-link active">Home</a>
-            <a [routerLink]="'/about-us'" class="nav-item nav-link">About Us</a>
-            <a [routerLink]="'/services'" class="nav-item nav-link">Our Services</a>
-            <a [routerLink]="'/contact-us'" class="nav-item nav-link px-2 ms-lg-2">Contact us</a>
-            <a [routerLink]="'#'" *ngIf="isLoggedIn" (click)="logout()" class="nav-item nav-link px-2 ms-lg-2">Logout</a>
-            <a [routerLink]="'/login'" *ngIf="!isLoggedIn" class="nav-item nav-link">login</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/home'" *ngIf="!isLoggedIn" class="nav-item nav-link ">Home</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'#'" *ngIf="isLoggedIn"  class="nav-item nav-link px-2 ms-lg-2">profile</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/businesses'"  *ngIf="isLoggedIn" class="nav-item nav-link">services </a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/about-us'" *ngIf="!isLoggedIn" class="nav-item nav-link">About Us</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/services'" *ngIf="!isLoggedIn" class="nav-item nav-link">Our Services</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/contact-us'" *ngIf="!isLoggedIn" class="nav-item nav-link">Contact us</a>
+            <a [routerLinkActive]="['active']" [routerLink]="'/login'" *ngIf="!isLoggedIn" class="nav-item nav-link">login</a>
             <a [routerLink]="'/sign-up'"  *ngIf="!isLoggedIn" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Sign Up <i class="bi bi-arrow-right"></i></a>
-            <a [routerLink]="'#'"  *ngIf="isLoggedIn" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5"><i class="bi bi-person-fill"></i> Profile </a>
-
+            <a [routerLink]="'#'"  *ngIf="isLoggedIn" (click)="logout()" class="nav-item nav-link nav-contact bg-danger text-white px-5 ms-lg-5"><i class="bi bi-person-fill"></i> logout </a>
         </div>
     </div>
 </nav>

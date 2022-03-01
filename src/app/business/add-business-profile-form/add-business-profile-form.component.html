@@ -1,0 +1,171 @@
+<div class="container-fluid pt-5">
+  <div class="container">
+    <div
+      class="border-start border-5 border-primary ps-5 mb-5"
+      style="max-width: 600px"
+    >
+      <h1 class="display-5 text-uppercase mb-0">Add business</h1>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <form [formGroup]="newBusiness" (ngSubmit)="onSubmit()">
+          <div class="row g-3">
+            <div class="col-12">
+              <input
+                type="text"
+                formControlName="business_name"
+                class="form-control bg-light border-0 px-4"
+                name="business_name"
+                placeholder="Your business name"
+              />
+              <!-- <span *ngIf="validationmsg?.fullname['invalid']"></span> -->
+              <div
+                [hidden]="businessname?.valid || businessname?.untouched"
+                style="color: red"
+              >
+                <small *ngIf="businessname?.errors?.['required']"
+                  >Name is required</small
+                >
+              </div>
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                formControlName="service_description"
+                class="form-control bg-light border-0 px-4"
+                name="description"
+                placeholder="Your description"
+              />
+              <div
+                [hidden]="description?.valid || description?.untouched"
+                style="color: red"
+              >
+                <small *ngIf="description?.errors?.['required']"
+                  >Description is required</small
+                >
+              </div>
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                formControlName="phone_number"
+                class="form-control bg-light border-0 px-4"
+                name="phoneNum"
+                placeholder="Your phoneNum"
+              />
+              <div
+                [hidden]="phoneNum?.valid || phoneNum?.untouched"
+                style="color: red"
+              >
+                <small *ngIf="phoneNum?.errors?.['required']"
+                  >Phone number is required</small
+                >
+              </div>
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                formControlName="address"
+                class="form-control bg-light border-0 px-4"
+                name="address"
+                placeholder="address"
+              />
+              <div
+                [hidden]="address?.valid || address?.untouched"
+                style="color: red"
+              >
+                <small *ngIf="address?.errors?.['required']"
+                  >Address is required</small
+                >
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-control bg-light border-0 px-4">
+                Your Business Type : <br />
+                <input
+                  type="radio"
+                  formControlName="business_type"
+                  value="vet"
+                  name="business_type"
+                />
+                <label class="px-1">Vet</label><br />
+                <input
+                  type="radio"
+                  formControlName="business_type"
+                  value="hotel"
+                  name="business_type"
+                />
+                <label class="px-1">Hotel</label><br />
+                <input
+                  type="radio"
+                  formControlName="business_type"
+                  value="ranch"
+                  name="business_type"
+                />
+                <label class="px-1">Ranch</label><br />
+                <input
+                  type="radio"
+                  formControlName="business_type"
+                  value="private"
+                  name="business_type"
+                />
+                <label class="px-1">Private</label><br />
+                <div
+                  [hidden]="businesstype?.valid || businesstype?.untouched"
+                  style="color: red"
+                >
+                  <small *ngIf="businesstype?.errors?.['required']"
+                    >business type is required</small
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12" class="form-control bg-light border-0 px-4">
+              <label for="openat">Open At : </label> <br />
+              <input
+                id="openat"
+                type="time"
+                name="openat"
+                formControlName="open_at"
+              />
+              <div
+                [hidden]="openat?.valid || openat?.untouched"
+                style="color: red"
+              >
+                <small *ngIf="openat?.errors?.['required']"
+                  >openning time is required</small
+                >
+              </div>
+            </div>
+            <div class="col-12" class="form-control bg-light border-0 px-4">
+              <label for="closeat">Close At : </label> <br />
+              <input
+                id="closeat"
+                type="time"
+                name="closeat"
+                formControlName="close_at"
+              />
+              <div
+                [hidden]="closeat?.valid || closeat?.untouched"
+                style="color: red"
+              >
+                <small *ngIf="closeat?.errors?.['required']"
+                  >closing time is required</small
+                >
+              </div>
+            </div>
+            <div class="col-12">
+              <button
+                class="btn btn-primary w-100 py-3"
+                type="submit"
+                [disabled]="newBusiness.invalid"
+              >
+                Add Business
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

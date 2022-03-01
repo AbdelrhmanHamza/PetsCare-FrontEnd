@@ -2,7 +2,7 @@
     <div class="row">
         <app-filter class="col-lg-4 ">
         </app-filter>
-        <app-card class="col-lg-8 "></app-card>
+        <app-card [businesses]="serviceCardInfos" class="col-lg-8 "></app-card>
     </div>
 </div>
-<app-pagination></app-pagination>
+<app-pagination [lastPage]="pages"></app-pagination>
