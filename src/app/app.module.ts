@@ -17,8 +17,8 @@ import { ContactDetailsComponent } from './pages/contact/contact-details/contact
 import { RegisterationComponent } from './pages/registeration/registeration.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
-import { BusinessProfileComponent } from './business/business-profile/business-profile.component';
-import { AddBusinessProfileFormComponent } from './business/add-business-profile-form/add-business-profile-form.component';
+import { BusinessProfileComponent } from './Business/business-profile/business-profile.component';
+import { AddBusinessProfileFormComponent } from './Business/add-business-profile-form/add-business-profile-form.component';
 import { FilterComponent } from './client/clientBrowsing/filter/filter.component';
 import { CardComponent } from './client/clientBrowsing/card/card.component';
 import { PaginationComponent } from './client/clientBrowsing/pagination/pagination.component';
@@ -27,6 +27,10 @@ import { FormsModule } from '@angular/forms';
 import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
+import { BusinessGalleryPreviewComponent } from './Business/business-gallery-preview/business-gallery-preview.component';
+import { BusinessUpdateFormComponent } from './Business/business-update-form/business-update-form.component';
+import { BusinessPackagesComponent } from './Business/business-packages/business-packages.component';
+import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 import { StripeComponent } from './payment/stripe/stripe.component';
 
@@ -54,6 +58,10 @@ import { StripeComponent } from './payment/stripe/stripe.component';
     PaginationComponent,
     ContainerComponent,
     MyBusinessesComponent,
+    BusinessGalleryPreviewComponent,
+    BusinessUpdateFormComponent,
+    BusinessPackagesComponent,
+    BusinessUpdateContainerComponent,
     ServiceDetailsComponent,
     StripeComponent
   ],
