@@ -1,11 +1,9 @@
 export interface AddBusinessForm {
-    businessname:string,
-    description:string,
-    businesstype:string,
-    phoneNum:string,
-    city:string,
-    state:string,
+    business_type:string,
+    business_name:string,
     address:string,
-    openat:string,
-    closeat:string,
+    phone_number:string,
+    service_description:string,
+    open_at:string,
+    close_at:string,
 }

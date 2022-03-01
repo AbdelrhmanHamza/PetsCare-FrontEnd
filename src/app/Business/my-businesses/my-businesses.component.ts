@@ -26,7 +26,7 @@ export class MyBusinessesComponent implements OnInit {
           console.log(data);
           data.forEach(
             (element: {
-              id: any;
+              id: number;
               business_name: any;
               business_type: any;
               open_at: any;
@@ -56,5 +56,18 @@ export class MyBusinessesComponent implements OnInit {
         }
       );
     }
+  }
+  onDelete(id:any):void
+  {
+    this.businessProfileService.deleteBusiness(id).subscribe(
+
+        (data) => {
+         window.location.reload();
+        },
+        (err) => {
+          console.log(err.error);
+        }
+      );
+
   }
 }
