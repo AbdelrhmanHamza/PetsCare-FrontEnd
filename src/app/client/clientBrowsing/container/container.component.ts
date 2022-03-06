@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Bussiness } from 'app/models/service.model';
-import { BusinessService } from 'app/services/business.service';
+import { ClientBusinessService } from 'app/services/client-business.service';
 import { TokenStorageService } from 'app/services/token-storage.service';
 
 
@@ -12,7 +12,7 @@ import { TokenStorageService } from 'app/services/token-storage.service';
 })
 export class ContainerComponent implements OnInit {
 
-  constructor(private businessService: BusinessService, private tokenStorage: TokenStorageService,
+  constructor(private clientBusinessService: ClientBusinessService, private tokenStorage: TokenStorageService,
     private router: Router) { }
   serviceCardInfos: Bussiness[] = [];
   pages: number = 0;
@@ -20,12 +20,22 @@ export class ContainerComponent implements OnInit {
     if (!this.tokenStorage.getToken()) {
       this.router.navigate(['/']);
     }else{
-      this.businessService.getBusinesses().subscribe(
+      this.clientBusinessService.getBusinesses().subscribe(
         (data) => {
           console.log(data);
           this.pages=data.last_page;
           console.log(this.pages);
-          data.data.forEach((element: { id: any; business_name: any; business_type: any; open_at: any; close_at: any; address: any; package_name: any; package_description: any; package_price: any; }) => {
+          data.data.forEach((element: 
+            { id: any; 
+            business_name: any;
+             business_type: any; 
+             open_at: any; 
+             close_at: any; 
+             address: any; 
+             package_name: any; 
+             package_description: any; 
+             package_price: any; }
+             ) => {
             this.serviceCardInfos.push({
               id: element.id,
               name: element.business_name,
