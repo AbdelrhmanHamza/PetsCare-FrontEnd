@@ -20,8 +20,5 @@ export class CardComponent implements OnInit {
   onDetails(id:any){
     this.router.navigate(['/businesses/details']);
   }
-  showDetails(): void {
-    console.log("weeeeeeeeee")
-  }
-
+ 
 }
