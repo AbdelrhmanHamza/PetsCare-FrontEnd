@@ -33,6 +33,7 @@ import { BusinessPackagesComponent } from './Business/business-packages/business
 import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 import { StripeComponent } from './payment/stripe/stripe.component';
+import { ClientAddPetFormComponent } from './client/clientBrowsing/client-add-pet-form/client-add-pet-form.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { StripeComponent } from './payment/stripe/stripe.component';
     BusinessPackagesComponent,
     BusinessUpdateContainerComponent,
     ServiceDetailsComponent,
-    StripeComponent
+    StripeComponent,
+    ClientAddPetFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,56 @@
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-0">Please add your pet information</h1>
+        </div>
+        {{registForm.value | json}}
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <form [formGroup]="registForm" (ngSubmit)="getdata()">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <input type="text" formControlName="pet_type" class="form-control bg-light border-0 px-4"
+                                placeholder="Your pet_type" style="height: 55px;">
+                            <div [hidden]="pet_type?.valid || pet_type?.untouched" style="color: red;">
+                                <small *ngIf="pet_type?.errors?.['required']">pet_type is required</small>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <input type="text" formControlName="pet_breed" class="form-control bg-light border-0 px-4"
+                                placeholder="Your pet_breed" style="height: 55px;">
+                                <div [hidden]="pet_breed?.valid || pet_breed?.untouched" style="color: red;">
+                                    <small *ngIf="pet_breed?.errors?.['required']">pet_breed is required</small>
+    
+                                </div>
+                        </div>
+                        <div class="col-12">
+                            <input type="text" formControlName="pet_age" class="form-control bg-light border-0 px-4"
+                                placeholder="pet_age" style="height: 55px;">
+                                <div [hidden]="pet_age?.valid || pet_age?.untouched" style="color: red;">
+                                    <small *ngIf="pet_age?.errors?.['required']">pet_age is required</small>
+    
+                                </div>
+                        </div>
+                        <div class="col-12">Has Medical Condition
+                            <br>
+                            <input type="radio" formControlName="has_medical_condition" value="1" name="has_medical_condition">
+                            <label>yes</label><br>
+                            <input type="radio" formControlName="has_medical_condition" value="0" name="has_medical_condition">
+                            <label>no</label><br>
+                            <div [hidden]="has_medical_condition?.valid || has_medical_condition?.untouched" style="color: red;">
+                                <small *ngIf="has_medical_condition?.errors?.['required']">has_medical_condition is required</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit"
+                                [disabled]="registForm.invalid">Sumbit </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
