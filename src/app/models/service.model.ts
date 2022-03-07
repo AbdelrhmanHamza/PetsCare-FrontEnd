@@ -1,5 +1,6 @@
 export interface Bussiness {
   id?: number,
+  img?:string,
   name: string,
   type: string,
   opensAt: string,

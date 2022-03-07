@@ -1,20 +1,26 @@
 <h2>Packages</h2>
-
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title">{{package.name}}</h5>
+<div *ngIf="packages.length != 0; then thenBlock"></div>
+<ng-template #thenBlock>
+  <div *ngFor="let package of packages">
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">{{ package.package_name }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Description</h6>
-        <p class="card-text">{{package.description}}</p>
-        <hr>
+        <p class="card-text">{{ package.package_description }}</p>
+        <hr />
         <div class="d-flex justify-content-between">
-            <span class="card-text mx-3"><span class=" text-primary ">Price:  </span> {{package.price}} <span>L.E</span> </span>
-            <button type="button mx-2" class=" btn btn-danger">
-
+          <span class="card-text mx-3"
+            ><span class="text-primary">Price: </span>
+            {{ package.package_price }}
+            <span>L.E</span>
+          </span>
+          <button type="button mx-2" class="btn btn-danger">
             <i class="bi bi-trash"></i>
-        </button>
-
+          </button>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+</ng-template>
 
-<button href="#" class=" mt-5 btn btn-primary">Add Package</button>
+<button href="#" class="mt-5 btn btn-primary">Add Package</button>

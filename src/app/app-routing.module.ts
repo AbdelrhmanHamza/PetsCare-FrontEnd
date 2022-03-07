@@ -28,7 +28,7 @@ const routes: Routes = [
   { path:'business/profile', component:BusinessProfileComponent},
   { path:'business/my-businesses', component:MyBusinessesComponent},
   { path:'business/add', component:AddBusinessProfileFormComponent},
-  { path:'business/details', component:BusinessUpdateContainerComponent},
+  { path:'business/details/:id', component:BusinessUpdateContainerComponent},
   { path:'business/requests', component:BusinessRequestsTabComponent},
   { path:'business/subscription', component:BusinessSubscriptionTabComponent}
 ];

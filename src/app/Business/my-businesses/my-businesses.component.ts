@@ -28,6 +28,7 @@ export class MyBusinessesComponent implements OnInit {
             (element: {
               id: number;
               business_name: any;
+              img: string;
               business_type: any;
               open_at: any;
               close_at: any;
@@ -38,6 +39,7 @@ export class MyBusinessesComponent implements OnInit {
             }) => {
               this.serviceCardInfos.push({
                 id: element.id,
+                img: element.img,
                 name: element.business_name,
                 type: element.business_type,
                 opensAt: element.open_at,
@@ -57,21 +59,17 @@ export class MyBusinessesComponent implements OnInit {
       );
     }
   }
-  onDetails(id:any){
-    this.router.navigate(['/business/details']);
-
+  onDetails(id: any) {
+    this.router.navigate(['/business/details/' , id]);
   }
-  onDelete(id:any):void
-  {
+  onDelete(id: any): void {
     this.businessProfileService.deleteBusiness(id).subscribe(
-
-        (data) => {
-         window.location.reload();
-        },
-        (err) => {
-          console.log(err.error);
-        }
-      );
-
+      (data) => {
+        window.location.reload();
+      },
+      (err) => {
+        console.log(err.error);
+      }
+    );
   }
 }

@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { AddBusinessForm } from '../models/add-business-form';
 import { REQ_API } from './enums/env';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -44,8 +43,28 @@ export class BusinessProfileService {
       }
     );
   }
+  updateBusiness(business: AddBusinessForm, id: number): Observable<any> {
+    return this.http.post(
+      REQ_API + 'profile/business/update/' + id,
+      JSON.stringify(business),
+      {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + this.token.getToken(),
+          'Content-Type': 'application/json',
+        }),
+      }
+    );
+  }
+  getBusinessByID(id: string): Observable<any> {
+    return this.http.get(REQ_API + 'profile/business/show/' + id, {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + this.token.getToken(),
+        'Content-Type': 'application/json',
+      }),
+    });
+  }
   deleteBusiness(id: number): Observable<any> {
-    return this.http.post(REQ_API + 'profile/business/delete/' + id, null,{
+    return this.http.post(REQ_API + 'profile/business/delete/' + id, null, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + this.token.getToken(),
         'Content-Type': 'application/json',
