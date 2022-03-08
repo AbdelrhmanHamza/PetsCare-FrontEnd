@@ -65,7 +65,8 @@ import { ClientAddPetFormComponent } from './client/clientBrowsing/client-add-pe
     BusinessUpdateContainerComponent,
     ServiceDetailsComponent,
     StripeComponent,
-    ClientAddPetFormComponent
+    ClientAddPetFormComponent,
+    
   ],
   imports: [
     BrowserModule,

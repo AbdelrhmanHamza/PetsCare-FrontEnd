@@ -52,4 +52,9 @@ export class BusinessProfileService {
       }),
     });
   }
+  public sendtokenpayment(token:any) {
+    this.http.post(REQ_API + 'stripe',token)
+    //post to package to back end
+    
+  }
 }

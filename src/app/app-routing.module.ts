@@ -15,6 +15,7 @@ import { ServicesComponent } from './home/services/services.component';
 import { ContactContainerComponent } from './pages/contact/contact-container/contact-container.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterationComponent } from './pages/registeration/registeration.component';
+import { StripeComponent } from './payment/stripe/stripe.component';
 
 const routes: Routes = [
   {path:'home', component:HomeContainerComponent},
@@ -32,7 +33,7 @@ const routes: Routes = [
   { path:'business/details', component:BusinessUpdateContainerComponent},
   { path:'business/requests', component:BusinessRequestsTabComponent},
   { path:'business/subscription', component:BusinessSubscriptionTabComponent},
-  {path:'client', component:ClientAddPetFormComponent}
+  {path:'client', component:ClientAddPetFormComponent},
 ];
 
 @NgModule({

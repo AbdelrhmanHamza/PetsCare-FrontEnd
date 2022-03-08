@@ -20,6 +20,7 @@
                             <td>{{package.packageName}}</td>
                             <td>{{package.createdAt}}</td>
                             <td>{{package.price}}</td>
+                            <button (click)="pay(package.price)">pay it</button>
                         </tr>
                     </tbody>
                 </table>

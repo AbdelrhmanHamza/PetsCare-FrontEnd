@@ -8,4 +8,6 @@ import { TokenStorageService } from './token-storage.service';
 })
 export class BusinessService {
   constructor(private http: HttpClient, private token: TokenStorageService) {}
+
+
 }
