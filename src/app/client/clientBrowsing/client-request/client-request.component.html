@@ -4,7 +4,7 @@
     </div>
     <div class="row g-5">
         <div class="col-lg-6">
-            <form [formGroup]="registForm" (ngSubmit)="getdata()">
+            <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
 
 
                 <div class="row g-3">
@@ -28,7 +28,7 @@
 
                     <!-- Request Button -->
                     <div class="col-12">
-                        <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="registForm.invalid"> Send Request </button>
+                        <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="requestForm.invalid"> Send Request </button>
                     </div>
                 </div>
             </form>
