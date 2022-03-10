@@ -8,9 +8,9 @@
             <h5 class="text-primary mb-0 mx-2">Opens at: {{card.opensAt}}</h5>
             <h5 class="text-primary mb-0 mx-2 ">Closes at: {{card.closesAt}}</h5>
             <div class="btn-action d-flex justify-content-end ">
-                <a>
+                <a [routerLink]="'/businesses/details?id='+card.id">
 
-                    <button class="btn btn-primary py-2 px-3" (click)="onDetails(card.id)">Details</button>
+                    <button class="btn btn-primary py-2 px-3">Details</button>
                 </a>
 
             </div>

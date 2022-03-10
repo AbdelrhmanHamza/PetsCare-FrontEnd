@@ -17,8 +17,8 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  onDetails(id:any){
-    this.router.navigate(['/businesses/details']);
-  }
+  // onDetails(id:any){
+  //   this.router.navigate(['/businesses/details?id='+id]);
+  // }
  
 }

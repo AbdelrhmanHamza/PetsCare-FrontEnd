@@ -1,23 +1,13 @@
-<nav
-  class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0"
->
-  <a href="" class="navbar-brand ms-lg-5">
-    <h3 class="m-0 text-uppercase text-dark">{{ username }}</h3>
-  </a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarCollapse"
-  >
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+    <a href="" class="navbar-brand ms-lg-5">
+        <h3 class="m-0 text-uppercase text-dark">{{ username }}</h3>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <div class="navbar-nav ms-auto py-0">
-      <a [routerLinkActive]="['active']"
-        [routerLink]="'business/my-businesses'"
-        class="nav-item nav-link active"
-        >My Business</a
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+            <a [routerLinkActive]="['active']" [routerLink]="'business/my-businesses'" class="nav-item nav-link active">My Business</a
       >
       <a [routerLinkActive]="['active']" [routerLink]="'business/requests'" class="nav-item nav-link"
         >Requests</a
@@ -29,11 +19,11 @@
         >Add Business +</a
       >
       <a
-        [routerLink]="'#'"
+      [routerLink]="'#'"
         (click)="logout()"
         class="nav-item nav-link nav-contact bg-danger text-white px-5 ms-lg-5"
         ><i class="bi bi-person-fill"></i> logout
       </a>
+        </div>
     </div>
-  </div>
 </nav>
