@@ -31,9 +31,9 @@ export class ServiceDetailsComponent implements OnInit {
     {src:"../../../../assets/img/blog-2.jpg"},
 
   ]
-serviceDetails!:Bussiness
-// ={
 
+serviceDetails!:Bussiness
+// ={ 
 //   name: "Doha",
 //   type: "Vet",
 //   opensAt: "always opened",

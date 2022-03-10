@@ -33,6 +33,8 @@ import { BusinessPackagesComponent } from './Business/business-packages/business
 import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 import { StripeComponent } from './payment/stripe/stripe.component';
+import { ClientRequestComponent } from './client/clientBrowsing/client-request/client-request.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
  
@@ -64,7 +66,9 @@ import { StripeComponent } from './payment/stripe/stripe.component';
     BusinessPackagesComponent,
     BusinessUpdateContainerComponent,
     ServiceDetailsComponent,
-    StripeComponent
+    StripeComponent,
+    ServiceDetailsComponent,
+    ClientRequestComponent
   ],
   imports: [
     
@@ -72,7 +76,8 @@ import { StripeComponent } from './payment/stripe/stripe.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

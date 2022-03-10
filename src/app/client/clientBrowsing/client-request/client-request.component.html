@@ -1,0 +1,37 @@
+<div class="container m-5">
+    <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+        <h1 class="display-5 text-uppercase mb-0">Your Request</h1>
+    </div>
+    <div class="row g-5">
+        <div class="col-lg-6">
+            <form [formGroup]="registForm" (ngSubmit)="getdata()">
+
+
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="requestDescription">Description</label>
+                        <input id="requestDescription" type="textarea" maxlength="250" formControlName="requestDescription" class="form-control bg-light border-0 px-4" name="requestDescription" placeholder="Your request description">
+                        <!-- <span *ngIf="validationmsg?.fullname['invalid']"></span> -->
+                        <div [hidden]="requestDescription?.valid || requestDescription?.untouched" style="color: red;">
+                            <small *ngIf="requestDescription?.errors?.['required']">Name is required</small>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="requestDueDate">Due Date</label>
+                        <input type="Date" formControlName="requestDueDate" class="form-control bg-light border-0 px-4" name="requestDueDate">
+                        <div [hidden]="requestDueDate?.valid || requestDueDate?.untouched" style="color: red;">
+                            <small *ngIf="requestDueDate?.errors?.['required']"> Due Date is required</small>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Request Button -->
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="registForm.invalid"> Send Request </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
