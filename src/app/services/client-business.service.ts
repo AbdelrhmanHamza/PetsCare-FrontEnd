@@ -4,7 +4,9 @@ import { Filters } from 'app/models/filters.model';
 import { Observable } from 'rxjs';
 import { REQ_API } from './enums/env';
 import { TokenStorageService } from './token-storage.service';
+export interface IdParam{id:number
 
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +25,14 @@ export class ClientBusinessService {
       }
     },
     );
+    
+  }
+  getBusinessById(id: number):Observable<any>{
 
+    return this.http.get(
+      REQ_API + `client/request/${id}`, {
+      headers: new HttpHeaders({ 'Authorization': 'Bearer ' + this.token.getToken(), 'Content-Type': 'application/json' })
+    },
+    );
   }
 }
