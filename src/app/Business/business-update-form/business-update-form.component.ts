@@ -22,7 +22,7 @@ export class BusinessUpdateFormComponent implements OnInit {
   };
   @Input()
   id: string = '';
-  
+
   registForm = new FormGroup({
     business_name: new FormControl(this.businessDetails.business_name, [
       Validators.required,
@@ -61,7 +61,7 @@ export class BusinessUpdateFormComponent implements OnInit {
       this.businessProfileService.getBusinessByID(this.id).subscribe(
         (data) => {
           this.businessDetails = data;
-          this.registForm=new FormGroup({
+          this.registForm = new FormGroup({
             business_name: new FormControl(this.businessDetails.business_name, [
               Validators.required,
             ]),
@@ -93,11 +93,16 @@ export class BusinessUpdateFormComponent implements OnInit {
     }
   }
   getAndPostData() {
-    let registerModel: AddBusinessForm = <AddBusinessForm>this.registForm.value;
-    //call api
-    console.log(registerModel);
-
-    //  console.log(this.registForm.value);
+    this.businessProfileService
+      .updateBusiness(<AddBusinessForm>this.registForm.value, this.id)
+      .subscribe(
+        (data) => {
+          this.router.navigate(['/business/my-businesses']);
+        },
+        (err) => {
+          console.log(err.error);
+        }
+      );
   }
   get businessname() {
     return this.registForm.get('business_name');

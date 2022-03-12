@@ -43,7 +43,7 @@ export class BusinessProfileService {
       }
     );
   }
-  updateBusiness(business: AddBusinessForm, id: number): Observable<any> {
+  updateBusiness(business: AddBusinessForm, id: string): Observable<any> {
     return this.http.post(
       REQ_API + 'profile/business/update/' + id,
       JSON.stringify(business),
