@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Bussiness } from 'app/models/service.model';
 import { ClientBusinessService } from 'app/services/client-business.service';
 import { TokenStorageService } from 'app/services/token-storage.service';
@@ -31,8 +31,10 @@ export class ServiceDetailsComponent implements OnInit {
     {src:"../../../../assets/img/blog-2.jpg"},
 
   ]
-
+  @Input()
 serviceDetails!:Bussiness
+// ={
+
 // ={ 
 //   name: "Doha",
 //   type: "Vet",
