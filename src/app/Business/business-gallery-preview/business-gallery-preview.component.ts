@@ -14,6 +14,8 @@ export class BusinessGalleryPreviewComponent implements OnInit {
   delete = false;
   @Input()
   id: string = '';
+  iconVisible = false;
+  file: File | undefined;
   imgs: BusinessImg[] = [];
   ngOnInit(): void {
     if (!this.tokenStorage.getToken()) {
@@ -43,7 +45,15 @@ export class BusinessGalleryPreviewComponent implements OnInit {
       );
     }
   }
+  mouseEnter() {
+    console.log('mouse enter');
+    this.iconVisible = true;
+  }
 
+  mouseLeave() {
+    console.log('mouse leave');
+    this.iconVisible = false;
+  }
   confirmDelete() {
     this.delete = true;
   }
@@ -52,6 +62,23 @@ export class BusinessGalleryPreviewComponent implements OnInit {
   }
   onCancel() {
     this.delete = false;
+  }
+  onChange(event: any,id:any) {
+    this.file = event.target.files[0];
+    if (this.file != null) {
+      this.Upload(id);
+    }
+  }
+  Upload(id:any) {
+    console.log(this.file);
+    this.businessImagesService.upload(this.file, id).subscribe(
+      (data) => {
+        window.location.reload();
+      },
+      (err) => {
+        console.log(err.error);
+      }
+    );
   }
   withAutofocus = `<button type="button" class="btn btn-danger"
   (click)="modal.close('Ok click')">Ok</button>`;

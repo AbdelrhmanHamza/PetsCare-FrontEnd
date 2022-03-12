@@ -16,12 +16,30 @@
               >x</span
             >
           </button>
-          <a href="#" class="d-block mb-4 h-100">
+
+          <a id="businessImg" class="d-block mb-4 h-100">
             <img
               class="img-fluid img-thumbnail"
-              src="http://petscare.test/{{img.image_path}}"
+              src="http://petscare.test/{{ img.image_path }}"
               alt=""
             />
+            <span
+              class="only-show-on-hover"
+              style="
+                position: absolute;
+                bottom: 25%;
+                left: 25%;
+                top: 40%;
+                right: 25%;
+              "
+            >
+              <input
+                class="form-control"
+                type="file"
+                (change)="onChange($event, img.business_profile_id)"
+                accept="image/*"
+              />
+            </span>
           </a>
         </div>
       </div>
