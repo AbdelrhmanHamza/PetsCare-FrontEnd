@@ -17,8 +17,8 @@ import { ContactDetailsComponent } from './pages/contact/contact-details/contact
 import { RegisterationComponent } from './pages/registeration/registeration.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
-import { BusinessProfileComponent } from './Business/business-profile/business-profile.component';
-import { AddBusinessProfileFormComponent } from './Business/add-business-profile-form/add-business-profile-form.component';
+import { BusinessProfileComponent } from './business/business-profile/business-profile.component';
+import { AddBusinessProfileFormComponent } from './business/add-business-profile-form/add-business-profile-form.component';
 import { FilterComponent } from './client/clientBrowsing/filter/filter.component';
 import { CardComponent } from './client/clientBrowsing/card/card.component';
 import { PaginationComponent } from './client/clientBrowsing/pagination/pagination.component';
@@ -32,9 +32,16 @@ import { BusinessUpdateFormComponent } from './Business/business-update-form/bus
 import { BusinessPackagesComponent } from './Business/business-packages/business-packages.component';
 import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
+
+import { StripeComponent } from './payment/stripe/stripe.component';
+import { ClientProfileComponent } from './client/client-profile/client-profile.component';
+import { ClientProfileContainerComponent } from './client/client-profile-container/client-profile-container.component';
+import { ClientProfilePetsComponent } from './client/client-profile-pets/client-profile-pets.component';
+
 // import { StripeComponent } from './payment/stripe/stripe.component';
 import { ClientRequestComponent } from './client/clientBrowsing/client-request/client-request.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
  
@@ -66,9 +73,16 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     BusinessPackagesComponent,
     BusinessUpdateContainerComponent,
     ServiceDetailsComponent,
+    
+    StripeComponent,
+    ClientProfileComponent,
+    ClientProfileContainerComponent,
+    ClientProfilePetsComponent
+
     // StripeComponent,
     ServiceDetailsComponent,
     ClientRequestComponent
+
   ],
   imports: [
     

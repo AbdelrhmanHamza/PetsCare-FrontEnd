@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row ">
+        <div class=" ms-5 col-lg-10">
+            <form [formGroup]="profileForm" (ngSubmit)="getAndPostData()">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <!-- name -->
+                        <input type="text" formControlName="name" class="form-control bg-light border-0 px-4" name="name" placeholder="Your name">
+                        <!-- <span *ngIf="validationmsg?.fullname['invalid']"></span> -->
+                        <div [hidden]="name?.valid || name?.untouched" style="color: red;">
+                            <small *ngIf="name?.errors?.['required']">Name is required</small>
+                        </div>
+                    </div>
+
+
+                    <!-- email -->
+
+
+                    <div class="col-12">
+                        <input type="email" formControlName="email" class="form-control bg-light border-0 px-4" name="email" placeholder="Your email">
+                        <div [hidden]="email?.valid || email?.untouched" style="color: red;">
+                            <small *ngIf="email?.errors?.['required']">Email is required</small>
+                        </div>
+                    </div>
+
+
+
+                    <!-- phone num -->
+
+                    <div class="col-12">
+                        <input type="text" formControlName="phoneNum" class="form-control bg-light border-0 px-4" name="phoneNum" placeholder="Your phoneNum">
+                        <div [hidden]="phoneNum?.valid || phoneNum?.untouched" style="color: red;">
+                            <small *ngIf="phoneNum?.errors?.['required']">Phone number is required</small>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="profileForm.invalid"> Update </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
