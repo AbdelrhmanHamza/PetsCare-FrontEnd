@@ -46,17 +46,6 @@ export class ServiceDetailsComponent implements OnInit {
       this.clientBusinessService.getBusinessById(this.id).subscribe(
         (data) => {
           console.log(data);
-          /*: "6 october city"
-business_name: "we care"
-business_type: "vet"
-close_at: "15:00"
-created_at: "2022-03-01T17:34:27.000000Z"
-id: 1
-: "06:00"
-: "01120623383"
-: "we care about all your pets"
-updated_at: "2022-03-01T17:34:27.000000Z"
-user_id: 2 */
           this.serviceDetails.name = data.business_name;
           this.serviceDetails.id=data.id;
           this.serviceDetails.type = data.business_type;
