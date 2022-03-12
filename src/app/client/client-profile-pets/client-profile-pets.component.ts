@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pet } from 'app/models/pet.model';
 
 @Component({
   selector: 'app-client-profile-pets',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client-profile-pets.component.scss']
 })
 export class ClientProfilePetsComponent implements OnInit {
-
+pets!:Pet[];
   constructor() { }
 
   ngOnInit(): void {
