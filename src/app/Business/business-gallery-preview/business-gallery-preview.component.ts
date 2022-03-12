@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Type } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BusinessImg } from 'app/models/business-img.model';
 import { BusinessImagesService } from 'app/services/business-images.service';
 import { TokenStorageService } from 'app/services/token-storage.service';
@@ -14,7 +14,7 @@ export class BusinessGalleryPreviewComponent implements OnInit {
   delete = false;
   @Input()
   id: string = '';
-  iconVisible = false;
+  imgToBeDeleted: number = 0;
   file: File | undefined;
   imgs: BusinessImg[] = [];
   ngOnInit(): void {
@@ -45,17 +45,9 @@ export class BusinessGalleryPreviewComponent implements OnInit {
       );
     }
   }
-  mouseEnter() {
-    console.log('mouse enter');
-    this.iconVisible = true;
-  }
-
-  mouseLeave() {
-    console.log('mouse leave');
-    this.iconVisible = false;
-  }
-  confirmDelete() {
+  confirmDelete(id: number) {
     this.delete = true;
+    this.imgToBeDeleted = id;
   }
   onDelete() {
     this.delete = false;
@@ -63,15 +55,21 @@ export class BusinessGalleryPreviewComponent implements OnInit {
   onCancel() {
     this.delete = false;
   }
-  onChange(event: any,id:any) {
+  onChange(event: any) {
     this.file = event.target.files[0];
     if (this.file != null) {
-      this.Upload(id);
+      this.Upload();
     }
   }
-  Upload(id:any) {
-    console.log(this.file);
-    this.businessImagesService.upload(this.file, id).subscribe(
+  onUpdateImg(event: any, id: number) {
+    this.file = event.target.files[0];
+    if (this.file != null) {
+      this.UpdateImg(id);
+    }
+  }
+  deleteImg() {
+    console.log(this.imgToBeDeleted);
+    this.businessImagesService.delete(this.imgToBeDeleted).subscribe(
       (data) => {
         window.location.reload();
       },
@@ -80,50 +78,39 @@ export class BusinessGalleryPreviewComponent implements OnInit {
       }
     );
   }
-  withAutofocus = `<button type="button" class="btn btn-danger"
-  (click)="modal.close('Ok click')">Ok</button>`;
+
+  UpdateImg(id: number) {
+    console.log(this.file);
+    this.businessImagesService.update(this.file, id).subscribe(
+      (data) => {
+        window.location.reload();
+      },
+      (err) => {
+        console.log(err.error);
+      }
+    );
+  }
+
+  Upload() {
+    console.log(this.file);
+    this.businessImagesService.upload(this.file, this.id).subscribe(
+      (data) => {
+        window.location.reload();
+      },
+      (err) => {
+        console.log(err.error);
+      }
+    );
+  }
 
   constructor(
-    private _modalService: NgbModal,
     private tokenStorage: TokenStorageService,
     private businessImagesService: BusinessImagesService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) {}
 
-  open(name: string) {
-    this._modalService.open(MODALS[name]);
+  open(content: any) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
   }
 }
-
-@Component({
-  selector: ' delete-image',
-  template: `
-    <div style="margin-top=50%" class="modal-body">
-      Are you sure you want to delete this picture?
-    </div>
-    <div class="modal-footer">
-      <button
-        type="button"
-        class="btn btn-danger"
-        (click)="modal.dismiss('cancel click')"
-      >
-        Cancel
-      </button>
-      <button
-        type="button"
-        ngbAutofocus
-        class="btn btn-primary btn-outline-primary"
-        (click)="modal.close('Ok click')"
-      >
-        Ok
-      </button>
-    </div>
-  `,
-})
-export class DeleteImage {
-  constructor(public modal: NgbActiveModal) {}
-}
-
-const MODALS: { [name: string]: Type<any> } = {
-  autofocus: DeleteImage,
-};
