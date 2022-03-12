@@ -33,6 +33,7 @@ export class ServiceDetailsComponent implements OnInit {
 serviceDetails!:Bussiness
 // ={
 
+// ={ 
 //   name: "Doha",
 //   type: "Vet",
 //   opensAt: "always opened",
