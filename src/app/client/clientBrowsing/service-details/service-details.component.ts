@@ -14,14 +14,12 @@ export interface ImagesUrls{
   styleUrls: ['./service-details.component.scss']
 })
 export class ServiceDetailsComponent implements OnInit {
-  id:any;
+  
 
   constructor(private clientBusinessService: ClientBusinessService, private tokenStorage: TokenStorageService,
-    private router: Router, private activatedRoute:ActivatedRoute) {
-    // const url: Observable<any> = activatedRoute.url.pipe(Map(segments :A =>segments.join('')))
-    // const id: Observable<any> = activatedRoute.params
-// this.id=id
-     }
+    private router: Router, private activatedRoute:ActivatedRoute) {}
+
+    id: string = '';
 
 
   sources:ImagesUrls[]=[
@@ -49,45 +47,39 @@ serviceDetails!:Bussiness
 // }
   ngOnInit(): void {
 
-  this.activatedRoute.queryParams.subscribe(queryParam=>{console.log(queryParam)
-    this.id=  queryParam.id
+    this.id = this.activatedRoute.snapshot.paramMap.get('id') ?? '';
   
-  })
-  
-   
-  
-
     if (!this.tokenStorage.getToken()) {
       this.router.navigate(['/']);
     }else{
       this.clientBusinessService.getBusinessById(this.id).subscribe(
         (data) => {
           console.log(data);
-        ;
-          data.data.forEach((element: 
-            { id: any; 
-            business_name: any;
-             business_type: any; 
-             open_at: any; 
-             close_at: any; 
-             address: any; 
-             package_name: any; 
-             package_description: any; 
-             package_price: any; }
-             ) => {
-            this.serviceDetails ={
-              id: element.id,
-              name: element.business_name,
-              type: element.business_type,
-              opensAt: element.open_at,
-              closesAt: element.close_at,
-              address: element.address,
-              package_name: element.package_name,
-              package_description: element.package_description,
-              package_price: element.package_price
-            }
-          });
-          console.log(this.serviceDetails);
+        
+          // data.data.forEach((element: 
+          //   { id: any; 
+          //   business_name: any;
+          //    business_type: any; 
+          //    open_at: any; 
+          //    close_at: any; 
+          //    address: any; 
+          //    package_name: any; 
+          //    package_description: any; 
+          //    package_price: any; }
+          //    ) => {
+          //   this.serviceDetails ={
+          //     id: element.id,
+          //     name: element.business_name,
+          //     type: element.business_type,
+          //     opensAt: element.open_at,
+          //     closesAt: element.close_at,
+          //     address: element.address,
+          //     package_name: element.package_name,
+          //     package_description: element.package_description,
+          //     package_price: element.package_price
+          //   }
+          // });
+          // console.log(this.serviceDetails);
         },
         (err) => {
           console.log(err.error);
@@ -98,5 +90,6 @@ serviceDetails!:Bussiness
 
 
   }
+
 sendRequest():void{}
 }
