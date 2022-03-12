@@ -32,7 +32,7 @@ const routes: Routes = [
   { path:'business/details', component:BusinessUpdateContainerComponent},
   { path:'business/requests', component:BusinessRequestsTabComponent},
   { path:'business/subscription', component:BusinessSubscriptionTabComponent},
-  { path:'client/requestService', component:ClientRequestComponent}
+  { path:'client/requestService', component:ClientRequestComponent},
   {path: 'business/details/:id', component:ServiceDetailsComponent},
 ];
 
