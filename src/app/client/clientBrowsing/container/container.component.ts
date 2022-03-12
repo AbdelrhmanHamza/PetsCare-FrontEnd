@@ -14,6 +14,10 @@ export class ContainerComponent implements OnInit {
 
   constructor(private clientBusinessService: ClientBusinessService, private tokenStorage: TokenStorageService,
     private router: Router) { }
+
+
+
+    
   serviceCardInfos: Bussiness[] = [];
   pages: number = 0;
   ngOnInit(): void {
