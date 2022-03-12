@@ -1,29 +1,47 @@
-<!-- <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-    <a href="" class="navbar-brand ms-lg-5">
-        <h3 class="m-0 text-uppercase text-dark">{{ username }}</h3>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto py-0">
-            <a [routerLinkActive]="['active']" [routerLink]="'business/my-businesses'" class="nav-item nav-link active">My Business</a
-      >
-      <a [routerLinkActive]="['active']" [routerLink]="'business/requests'" class="nav-item nav-link"
-        >Requests</a
-      >
-      <a [routerLinkActive]="['active']" [routerLink]="'business/subscription'" class="nav-item nav-link"
-        >Subscriptions</a
-      >
-      <a [routerLinkActive]="['active']" [routerLink]="'business/add'" class="nav-item nav-link"
-        >Add Business +</a
-      >
-      <a
-        [routerLink]="'#'"
-        (click)="logout()"
-        class="nav-item nav-link nav-contact bg-danger text-white px-5 ms-lg-5"
-        ><i class="bi bi-person-fill"></i> logout
-      </a>
+<div class="container">
+    <div class="row ">
+        <div class=" ms-5 col-lg-10">
+            <form [formGroup]="profileForm" (ngSubmit)="getAndPostData()">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <!-- name -->
+                        <input type="text" formControlName="name" class="form-control bg-light border-0 px-4" name="name" placeholder="Your name">
+                        <!-- <span *ngIf="validationmsg?.fullname['invalid']"></span> -->
+                        <div [hidden]="name?.valid || name?.untouched" style="color: red;">
+                            <small *ngIf="name?.errors?.['required']">Name is required</small>
+                        </div>
+                    </div>
+
+
+                    <!-- email -->
+
+
+                    <div class="col-12">
+                        <input type="email" formControlName="email" class="form-control bg-light border-0 px-4" name="email" placeholder="Your email">
+                        <div [hidden]="email?.valid || email?.untouched" style="color: red;">
+                            <small *ngIf="email?.errors?.['required']">Email is required</small>
+                        </div>
+                    </div>
+
+
+
+                    <!-- phone num -->
+
+                    <div class="col-12">
+                        <input type="text" formControlName="phoneNum" class="form-control bg-light border-0 px-4" name="phoneNum" placeholder="Your phoneNum">
+                        <div [hidden]="phoneNum?.valid || phoneNum?.untouched" style="color: red;">
+                            <small *ngIf="phoneNum?.errors?.['required']">Phone number is required</small>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="profileForm.invalid"> Update </button>
+                    </div>
+
+                </div>
+            </form>
         </div>
     </div>
-</nav> -->
+</div>

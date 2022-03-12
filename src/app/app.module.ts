@@ -34,6 +34,8 @@ import { BusinessUpdateContainerComponent } from './Business/business-update-con
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 import { StripeComponent } from './payment/stripe/stripe.component';
 import { ClientProfileComponent } from './client/client-profile/client-profile.component';
+import { ClientProfileContainerComponent } from './client/client-profile-container/client-profile-container.component';
+import { ClientProfilePetsComponent } from './client/client-profile-pets/client-profile-pets.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { ClientProfileComponent } from './client/client-profile/client-profile.c
     BusinessUpdateContainerComponent,
     ServiceDetailsComponent,
     StripeComponent,
-    ClientProfileComponent
+    ClientProfileComponent,
+    ClientProfileContainerComponent,
+    ClientProfilePetsComponent
   ],
   imports: [
     BrowserModule,
