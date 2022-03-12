@@ -33,6 +33,7 @@ import { BusinessPackagesComponent } from './Business/business-packages/business
 import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 import { StripeComponent } from './payment/stripe/stripe.component';
+import { ClientRequestPackagesComponent } from './client/client-request-packages/client-request-packages.component';
 
 @NgModule({
  
@@ -64,7 +65,8 @@ import { StripeComponent } from './payment/stripe/stripe.component';
     BusinessPackagesComponent,
     BusinessUpdateContainerComponent,
     ServiceDetailsComponent,
-    StripeComponent
+    StripeComponent,
+    ClientRequestPackagesComponent
   ],
   imports: [
     
