@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="ms-5 col-lg-10">
+      <form [formGroup]="profileForm" (ngSubmit)="submit()">
+        <div class="row g-3">
+          <div class="col-12">
+            <!-- first name -->
+            <input
+              type="text"
+              formControlName="first_name"
+              class="form-control bg-light border-0 px-4"
+              name="first_name"
+              placeholder="First name"
+            />
+            <!-- <span *ngIf="validationmsg?.fullname['invalid']"></span> -->
+            <div [hidden]="fname?.valid || fname?.untouched" style="color: red">
+              <small *ngIf="fname?.errors?.['required']"
+                >First name is required</small
+              >
+            </div>
+          </div>
+          <div class="col-12">
+            <!--last name -->
+            <input
+              type="text"
+              formControlName="last_name"
+              class="form-control bg-light border-0 px-4"
+              name="last_name"
+              placeholder="Last name"
+            />
+            <!-- <span *ngIf="validationmsg?.fullname['invalid']"></span> -->
+            <div [hidden]="lname?.valid || lname?.untouched" style="color: red">
+              <small *ngIf="lname?.errors?.['required']"
+                >Last name is required</small
+              >
+            </div>
+          </div>
+
+          <!-- address -->
+
+          <div class="col-12">
+            <input
+              type="text"
+              formControlName="address"
+              class="form-control bg-light border-0 px-4"
+              name="address"
+              placeholder="Address"
+            />
+            <div
+              [hidden]="address?.valid || address?.untouched"
+              style="color: red"
+            >
+              <small *ngIf="address?.errors?.['required']"
+                >Address is required</small
+              >
+            </div>
+          </div>
+
+          <!-- phone num -->
+
+          <div class="col-12">
+            <input
+              type="text"
+              formControlName="phone_number"
+              class="form-control bg-light border-0 px-4"
+              name="phone_number"
+              placeholder="Phone"
+            />
+            <div
+              [hidden]="phoneNum?.valid || phoneNum?.untouched"
+              style="color: red"
+            >
+              <small *ngIf="phoneNum?.errors?.['required']"
+                >Phone number is required</small
+              >
+            </div>
+          </div>
+
+          <div class="col-12">
+            <button
+              class="btn btn-primary w-100 py-3"
+              type="submit"
+              [disabled]="profileForm.invalid"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
