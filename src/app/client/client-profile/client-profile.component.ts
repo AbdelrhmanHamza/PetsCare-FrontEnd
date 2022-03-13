@@ -20,12 +20,8 @@ export class ClientProfileComponent implements OnInit {
     phone_number: '',
   };
   profileForm = new FormGroup({
-    client_first_name: new FormControl(this.user.first_name, [
-      Validators.required,
-    ]),
-    client_last_name: new FormControl(this.user.last_name, [
-      Validators.required,
-    ]),
+    first_name: new FormControl(this.user.first_name, [Validators.required]),
+    last_name: new FormControl(this.user.last_name, [Validators.required]),
     address: new FormControl(this.user.address, [Validators.required]),
     phone_number: new FormControl(this.user.phone_number, [
       Validators.required,
@@ -43,12 +39,8 @@ export class ClientProfileComponent implements OnInit {
         (data) => {
           console.log(data);
           this.profileForm = new FormGroup({
-            client_first_name: new FormControl(data.first_name, [
-              Validators.required,
-            ]),
-            client_last_name: new FormControl(data.last_name, [
-              Validators.required,
-            ]),
+            first_name: new FormControl(data.first_name, [Validators.required]),
+            last_name: new FormControl(data.last_name, [Validators.required]),
             address: new FormControl(data.address, [Validators.required]),
             phone_number: new FormControl(data.phone_number, [
               Validators.required,
@@ -64,12 +56,17 @@ export class ClientProfileComponent implements OnInit {
     }
   }
 
-  getAndPostData() {
-    let clientModel: User = <User>this.profileForm.value;
-    //call api
-    console.log(clientModel);
-
-    //  console.log(this.profileForm.value);
+  submit() {
+    this.user = <ClientProfile>this.profileForm.value;
+    console.log(this.user);
+    this.clientProfile.update(this.user).subscribe(
+      (data) => {
+        this.router.navigate(['/businesses']);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   get fname() {
