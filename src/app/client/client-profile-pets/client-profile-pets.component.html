@@ -1,0 +1,29 @@
+<h2>Pets</h2>
+<div class="container">
+    <div class="row">
+        <div class="card col-6" style="width: 18rem;" *ngFor="let pet of pets">
+            <div class="card-body">
+                <h5 class="card-title">Pet </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+
+                <div class="d-flex justify-content-between">
+                    <span class="card-text mx-3"><span class=" text-primary ">Pet type:  </span> {{pet.pet_type}}</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="card-text mx-3"><span class=" text-primary ">Pet breed:  </span> {{pet.pet_breed}}</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="card-text mx-3"><span class=" text-primary ">Pet age:  </span> {{pet.pet_age}}</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="card-text mx-3"><span class=" text-primary ">Has medical condition:  </span>
+                    <span *ngIf="pet.has_medical_condition">yes</span>
+                    <span class="text-danger" *ngIf="!pet.has_medical_condition">No</span> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<button href="#" class=" mt-5 btn btn-primary">Add Pet </button>

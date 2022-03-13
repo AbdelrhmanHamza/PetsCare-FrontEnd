@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddBusinessProfileFormComponent } from './business/add-business-profile-form/add-business-profile-form.component';
-import { BusinessProfileComponent } from './business/business-profile/business-profile.component';
+import { AddBusinessProfileFormComponent } from './Business/add-business-profile-form/add-business-profile-form.component';
+import { BusinessProfileComponent } from './Business/business-profile/business-profile.component';
 import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
+import { ClientRequestComponent } from './client/clientBrowsing/client-request/client-request.component';
 import { ContainerComponent } from './client/clientBrowsing/container/container.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 import { AboutComponent } from './home/about/about.component';
@@ -30,7 +31,9 @@ const routes: Routes = [
   { path:'business/add', component:AddBusinessProfileFormComponent},
   { path:'business/details', component:BusinessUpdateContainerComponent},
   { path:'business/requests', component:BusinessRequestsTabComponent},
-  { path:'business/subscription', component:BusinessSubscriptionTabComponent}
+  { path:'business/subscription', component:BusinessSubscriptionTabComponent},
+  { path:'client/requestService', component:ClientRequestComponent}
+  {path: 'business/details/:id', component:ServiceDetailsComponent},
 ];
 
 @NgModule({

@@ -27,12 +27,20 @@ export class ClientBusinessService {
     );
     
   }
-  getBusinessById(id: number):Observable<any>{
+  // getBusinessById(id: number):Observable<any>{
 
-    return this.http.get(
-      REQ_API + `client/request/${id}`, {
-      headers: new HttpHeaders({ 'Authorization': 'Bearer ' + this.token.getToken(), 'Content-Type': 'application/json' })
-    },
-    );
+  //   return this.http.get(
+  //     REQ_API + `client/request/+ id`, {
+  //     headers: new HttpHeaders({ 'Authorization': 'Bearer ' + this.token.getToken(), 'Content-Type': 'application/json' })
+  //   },
+  //   );
+  // }
+  getBusinessById(businessID: string): Observable<any> {
+    return this.http.get(REQ_API + 'profile/business/details/'+businessID,{
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + this.token.getToken(),
+        'Content-Type': 'application/json',
+      }),
+    });
   }
 }
