@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Package } from 'app/models/package.model';
+import { ServicePakage } from 'app/models/service-pakage.model';
 
 @Component({
   selector: 'app-client-request-packages',
@@ -7,7 +7,7 @@ import { Package } from 'app/models/package.model';
   styleUrls: ['./client-request-packages.component.scss']
 })
 export class ClientRequestPackagesComponent implements OnInit {
-packages!:Package[];
+packages!:ServicePakage[];
   constructor() { }
 
   ngOnInit(): void {

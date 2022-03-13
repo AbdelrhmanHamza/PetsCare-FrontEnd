@@ -38,7 +38,7 @@ const routes: Routes = [
     component: BusinessSubscriptionTabComponent,
   },
   { path: 'client/requestService', component: ClientRequestComponent },
-  { path: 'business/details/:id', component: ServiceDetailsComponent },
+  { path: 'business/details/:id', component: BusinessUpdateContainerComponent },
 ];
 
 @NgModule({
