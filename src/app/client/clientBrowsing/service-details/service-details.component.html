@@ -50,11 +50,9 @@
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-end">
-    <div>
-      <a [routerLink]="'client/requestService'">
-        <button class="btn btn-primary m-5">Request</button>
-      </a>
-    </div>
+  <div class="d-flex justify-content-center">
+    <app-client-request-packages
+      [id]="id"
+    ></app-client-request-packages>
   </div>
 </div>
