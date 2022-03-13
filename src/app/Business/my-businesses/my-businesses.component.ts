@@ -29,6 +29,7 @@ export class MyBusinessesComponent implements OnInit {
               id: number;
               business_name: any;
               img: string;
+              image_path: string;
               business_type: any;
               open_at: any;
               close_at: any;
@@ -48,6 +49,10 @@ export class MyBusinessesComponent implements OnInit {
                 package_name: element.package_name,
                 package_description: element.package_description,
                 package_price: element.package_price,
+                image_path:
+                  element.image_path != null
+                    ? 'http://petscare.test/' + element.image_path
+                    : './../../../assets/img/team-1.jpg',
               });
             }
           );
@@ -60,7 +65,7 @@ export class MyBusinessesComponent implements OnInit {
     }
   }
   onDetails(id: any) {
-    this.router.navigate(['/business/details/' , id]);
+    this.router.navigate(['/business/details/', id]);
   }
   onDelete(id: any): void {
     this.businessProfileService.deleteBusiness(id).subscribe(
