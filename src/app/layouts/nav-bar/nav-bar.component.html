@@ -1,24 +1,86 @@
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-    <a href="index.html" class="navbar-brand ms-lg-5">
-        <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>Pet Care</h1>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav
+  class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0"
+>
+  <a href="index.html" class="navbar-brand ms-lg-5">
+    <h1 class="m-0 text-uppercase text-dark">
+      <i class="bi bi-shop fs-1 text-primary me-3"></i>Pet Care
+    </h1>
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarCollapse"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto py-0">
-            <a [routerLinkActive]="['active']" [routerLink]="'/home'" *ngIf="!isLoggedIn" class="nav-item nav-link ">Home</a>
-            <a [routerLinkActive]="['active']" [routerLink]="'#'" *ngIf="isLoggedIn"  class="nav-item nav-link px-2 ms-lg-2">profile</a>
-            <a [routerLinkActive]="['active']" [routerLink]="'/businesses'"  *ngIf="isLoggedIn" class="nav-item nav-link">services </a>
-            <a [routerLinkActive]="['active']" [routerLink]="'/about-us'" *ngIf="!isLoggedIn" class="nav-item nav-link">About Us</a>
-            <a [routerLinkActive]="['active']" [routerLink]="'/services'" *ngIf="!isLoggedIn" class="nav-item nav-link">Our Services</a>
-            <a [routerLinkActive]="['active']" [routerLink]="'/contact-us'" *ngIf="!isLoggedIn" class="nav-item nav-link">Contact us</a>
-            <a [routerLinkActive]="['active']" [routerLink]="'/login'" *ngIf="!isLoggedIn" class="nav-item nav-link">login</a>
-            <a [routerLink]="'/sign-up'"  *ngIf="!isLoggedIn" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Sign Up <i class="bi bi-arrow-right"></i></a>
-            <a [routerLink]="'#'"  *ngIf="isLoggedIn" (click)="logout()" class="nav-item nav-link nav-contact bg-danger text-white px-5 ms-lg-5"><i class="bi bi-person-fill"></i> logout </a>
-        </div>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav ms-auto py-0">
+      <a
+        [routerLinkActive]="['active']"
+        [routerLink]="'/home'"
+        *ngIf="!isLoggedIn"
+        class="nav-item nav-link"
+        >Home</a
+      >
+      <a
+        [routerLinkActive]="['active']"
+        [routerLink]="'/profile'"
+        *ngIf="isLoggedIn"
+        class="nav-item nav-link px-2 ms-lg-2"
+        >profile</a
+      >
+      <a
+        [routerLinkActive]="['active']"
+        [routerLink]="'/businesses'"
+        *ngIf="isLoggedIn"
+        class="nav-item nav-link"
+        >services
+      </a>
+      <a
+        [routerLinkActive]="['active']"
+        [routerLink]="'/about-us'"
+        *ngIf="!isLoggedIn"
+        class="nav-item nav-link"
+        >About Us</a
+      >
+      <a
+        [routerLinkActive]="['active']"
+        [routerLink]="'/services'"
+        *ngIf="!isLoggedIn"
+        class="nav-item nav-link"
+        >Our Services</a
+      >
+      <a
+        [routerLinkActive]="['active']"
+        [routerLink]="'/contact-us'"
+        *ngIf="!isLoggedIn"
+        class="nav-item nav-link"
+        >Contact us</a
+      >
+      <a
+        [routerLinkActive]="['active']"
+        [routerLink]="'/login'"
+        *ngIf="!isLoggedIn"
+        class="nav-item nav-link"
+        >login</a
+      >
+      <a
+        [routerLink]="'/sign-up'"
+        *ngIf="!isLoggedIn"
+        class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5"
+        >Sign Up <i class="bi bi-arrow-right"></i
+      ></a>
+      <a
+        [routerLink]="'#'"
+        *ngIf="isLoggedIn"
+        (click)="logout()"
+        class="nav-item nav-link nav-contact bg-danger text-white px-5 ms-lg-5"
+        ><i class="bi bi-person-fill"></i> logout
+      </a>
     </div>
+  </div>
 </nav>
 <!-- Navbar End -->

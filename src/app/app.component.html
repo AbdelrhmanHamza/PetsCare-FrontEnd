@@ -1,13 +1,9 @@
-<!-- <div *ngIf="!isBusiness; then thenBlock else elseBlock"></div>
+<div *ngIf="!isBusiness; then thenBlock; else elseBlock"></div>
 <ng-template #thenBlock>
-    <app-nav-bar></app-nav-bar>
+  <app-nav-bar></app-nav-bar>
 </ng-template>
 <ng-template #elseBlock>
-    <app-business-profile></app-business-profile>
+  <app-business-profile></app-business-profile>
 </ng-template>
 <router-outlet> </router-outlet>
-
-
-<app-client-profile-container></app-client-profile-container>
 <app-footer></app-footer>
-
