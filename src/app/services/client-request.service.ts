@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { REQ_API } from './enums/env';
 import { TokenStorageService } from './token-storage.service';
-import { BusinessRequest } from 'app/models/businessRequest.mode';
+import { ClientRequestServiceModel } from 'app/models/client-request-service.model';
 
 @Injectable({
   providedIn: 'root',
@@ -19,12 +19,18 @@ export class ClientRequestService {
       }),
     });
   }
-  requestService(request: BusinessRequest): Observable<any> {
-    return this.http.post(REQ_API + 'request/add', JSON.stringify(request), {
-      headers: new HttpHeaders({
-        Authorization: 'Bearer ' + this.token.getToken(),
-        'Content-Type': 'application/json',
-      }),
-    });
+  requestService(request: ClientRequestServiceModel): Observable<any> {
+    console.log(JSON.stringify(request));
+
+    return this.http.post(
+      REQ_API + 'client/request/add',
+      JSON.stringify(request),
+      {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + this.token.getToken(),
+          'Content-Type': 'application/json',
+        }),
+      }
+    );
   }
 }

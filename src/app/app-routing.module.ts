@@ -7,7 +7,6 @@ import { BusinessSubscriptionTabComponent } from './Business/business-subscripti
 import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
 import { MyBusinessesComponent } from './Business/my-businesses/my-businesses.component';
 import { ClientProfileContainerComponent } from './client/client-profile-container/client-profile-container.component';
-import { ClientRequestComponent } from './client/clientBrowsing/client-request/client-request.component';
 import { ContainerComponent } from './client/clientBrowsing/container/container.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 import { AboutComponent } from './home/about/about.component';
@@ -37,7 +36,6 @@ const routes: Routes = [
     path: 'business/subscription',
     component: BusinessSubscriptionTabComponent,
   },
-  { path: 'client/requestService', component: ClientRequestComponent },
   { path: 'business/details/:id', component: BusinessUpdateContainerComponent },
 ];
 

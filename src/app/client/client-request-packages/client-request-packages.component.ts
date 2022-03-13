@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ServicePakage } from 'app/models/service-pakage.model';
 import { ClientRequestService } from 'app/services/client-request.service';
 import { TokenStorageService } from 'app/services/token-storage.service';
@@ -12,12 +13,13 @@ import { TokenStorageService } from 'app/services/token-storage.service';
 export class ClientRequestPackagesComponent implements OnInit {
   @Input()
   id: string = '';
-
+  packageID = 0;
   packages: ServicePakage[] = [];
   constructor(
     private clientRequestService: ClientRequestService,
     private tokenStorage: TokenStorageService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -49,5 +51,9 @@ export class ClientRequestPackagesComponent implements OnInit {
         }
       );
     }
+  }
+  open(content: any, id: number) {
+    this.packageID = id;
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
   }
 }
