@@ -36,7 +36,7 @@ export class ServiceDetailsComponent implements OnInit {
     opensAt: '',
     closesAt: '',
   };
- 
+
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.paramMap.get('id') ?? '';
 
@@ -47,16 +47,15 @@ export class ServiceDetailsComponent implements OnInit {
         (data) => {
           console.log(data);
           this.serviceDetails.name = data.business_name;
-          this.serviceDetails.id=data.id;
+          this.serviceDetails.id = data.id;
           this.serviceDetails.type = data.business_type;
-          this.serviceDetails.opensAt=data.open_at;
+          this.serviceDetails.opensAt = data.open_at;
           this.serviceDetails.closesAt = data.close_at;
-          this.serviceDetails.package_name=data.id;
+          this.serviceDetails.package_name = data.id;
           this.serviceDetails.phone_number = data.phone_number;
-          this.serviceDetails.package_description=data.service_description;
+          this.serviceDetails.package_description = data.service_description;
           this.serviceDetails.package_price = data.business_name;
-          this.serviceDetails.address=data.address;
-
+          this.serviceDetails.address = data.address;
         },
         (err) => {
           console.log(err.error);
