@@ -1,20 +1,118 @@
 <h2>Packages</h2>
-
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title">{{package.name}}</h5>
+<div *ngIf="packages.length != 0; then thenBlock"></div>
+<ng-template #thenBlock>
+  <div *ngFor="let package of packages">
+    <div class="card mt-4" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">{{ package.package_name }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Description</h6>
-        <p class="card-text">{{package.description}}</p>
-        <hr>
+        <p class="card-text">{{ package.package_description }}</p>
+        <hr />
         <div class="d-flex justify-content-between">
-            <span class="card-text mx-3"><span class=" text-primary ">Price:  </span> {{package.price}} <span>L.E</span> </span>
-            <button type="button mx-2" class=" btn btn-danger">
-
+          <span class="card-text mx-3"
+            ><span class="text-primary">Price: </span>
+            {{ package.package_price }}
+            <span>L.E</span>
+          </span>
+          <button type="button mx-2" class="btn btn-danger" (click)="onDelete(package.id)">
             <i class="bi bi-trash"></i>
-        </button>
-
+          </button>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+</ng-template>
 
-<button href="#" class=" mt-5 btn btn-primary">Add Package</button>
+<button href="#" class="mt-5 btn btn-primary" (click)="open(mymodal)">
+  Add Package
+</button>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-body">
+    <div
+      class="border-start border-5 border-primary ps-5 mb-5"
+      style="max-width: 600px"
+    >
+      <h2 class="display-5 text-uppercase mb-0">Add Package</h2>
+    </div>
+    <div class="col-lg-7">
+      <form [formGroup]="addPackageForm" (ngSubmit)="onSubmit()">
+        <div class="row g-3">
+          <div class="col-12">
+            <input
+              type="text"
+              formControlName="package_name"
+              class="form-control bg-light border-0 px-4"
+              name="packageName"
+              placeholder="Your package name"
+            />
+            <!-- <span *ngIf="validationmsg?.fullname['invalid']"></span> -->
+            <div
+              [hidden]="packageName?.valid || packageName?.untouched"
+              style="color: red; padding-left: 10px"
+            >
+              <small *ngIf="packageName?.errors?.['required']"
+                >Name is required</small
+              >
+            </div>
+          </div>
+          <div class="col-12">
+            <textarea
+              type="text"
+              formControlName="package_description"
+              class="form-control bg-light border-0 px-4"
+              name="packageDescription"
+              placeholder="Description"
+              rows="4"
+              cols="50"
+            >
+            </textarea>
+            <div
+              [hidden]="
+                packageDescription?.valid || packageDescription?.untouched
+              "
+              style="color: red; padding-left: 10px"
+            >
+              <small *ngIf="packageDescription?.errors?.['required']"
+                >Description is required</small
+              >
+            </div>
+          </div>
+          <div class="col-12">
+            <input
+              type="number"
+              formControlName="package_price"
+              class="form-control bg-light border-0 px-4"
+              name="packagePrice"
+              placeholder="Price"
+            />
+            <div
+              [hidden]="packagePrice?.valid || packagePrice?.untouched"
+              style="color: red; padding-left: 10px"
+            >
+              <small *ngIf="packagePrice?.errors?.['required']"
+                >Price is required</small
+              >
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="modal.dismiss()"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            [disabled]="addPackageForm.invalid"
+            class="btn btn-primary btn-outline-primary"
+          >
+            Ok
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>
