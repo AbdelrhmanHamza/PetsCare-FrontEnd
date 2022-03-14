@@ -32,6 +32,10 @@ import { BusinessPackagesComponent } from './Business/business-packages/business
 import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 
+import { StripeComponent } from './payment/stripe/stripe.component';
+import { ClientAddPetFormComponent } from './client/clientBrowsing/client-add-pet-form/client-add-pet-form.component';
+
+
 import { ClientRequestPackagesComponent } from './client/client-request-packages/client-request-packages.component';
 import { ClientProfileComponent } from './client/client-profile/client-profile.component';
 import { ClientProfileContainerComponent } from './client/client-profile-container/client-profile-container.component';
@@ -42,6 +46,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AddBusinessProfileFormComponent } from './Business/add-business-profile-form/add-business-profile-form.component';
 import { BusinessProfileComponent } from './Business/business-profile/business-profile.component';
 import { ClientRequestComponent } from './client/client-request/client-request.component';
+
 
 
 @NgModule({
@@ -74,6 +79,11 @@ import { ClientRequestComponent } from './client/client-request/client-request.c
     BusinessPackagesComponent,
     BusinessUpdateContainerComponent,
     ServiceDetailsComponent,
+
+    StripeComponent,
+    ClientAddPetFormComponent,
+    
+
     ClientRequestPackagesComponent,
     ClientProfileComponent,
     ClientProfileContainerComponent,
@@ -81,6 +91,7 @@ import { ClientRequestComponent } from './client/client-request/client-request.c
     // StripeComponent,
     ServiceDetailsComponent,
     ClientRequestComponent
+
 
   ],
   imports: [

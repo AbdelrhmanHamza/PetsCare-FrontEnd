@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ClientAddPetForm } from 'app/models/client-add-pet-form';
 import { Filters } from 'app/models/filters.model';
 import { Observable } from 'rxjs';
 import { REQ_API } from './enums/env';
@@ -35,5 +36,16 @@ export class ClientBusinessService {
         'Content-Type': 'application/json',
       }),
     });
+  }
+  addpet(pet:ClientAddPetForm):Observable<any>{
+return this.http.post(
+  REQ_API + 'profile/pet/add' , JSON.stringify(pet),
+  {
+    headers: new HttpHeaders({
+      Authorization: 'Bearer ' + this.token.getToken(),
+      'Content-Type': 'application/json',
+    }),
+  }
+);
   }
 }
