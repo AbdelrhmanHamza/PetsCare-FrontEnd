@@ -1,7 +1,6 @@
 .picture-container {
-    position: relative;
+  position: relative;
 }
-
 
 /* Make the image responsive */
 
@@ -13,20 +12,35 @@
 /* Style the button and place it in the middle of the container/image */
 
 .picture-container .btn {
-    position: absolute;
-    top: 6%;
-    left: 92%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: black;
-    font-size: 16px;
-    padding: 0px 0px;
-    border: solid;
-    cursor: pointer;
-    border-radius: 5px;
+  position: absolute;
+  top: 6%;
+  left: 92%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: black;
+  font-size: 16px;
+  padding: 0px 0px;
+  border: solid;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .picture-container .btn:hover {
-    background-color: red;
-    color: white
+  background-color: red;
+  color: white;
+}
+
+img {
+  opacity: 1;
+}
+
+img:hover {
+  opacity: 0.5;
+}
+#businessImg span.only-show-on-hover {
+  visibility: hidden;
+  float: right;
+}
+#businessImg:hover span.only-show-on-hover {
+  visibility: visible;
 }

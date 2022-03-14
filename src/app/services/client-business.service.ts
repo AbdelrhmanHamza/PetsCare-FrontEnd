@@ -5,7 +5,9 @@ import { Filters } from 'app/models/filters.model';
 import { Observable } from 'rxjs';
 import { REQ_API } from './enums/env';
 import { TokenStorageService } from './token-storage.service';
+export interface IdParam{id:number
 
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -24,7 +26,16 @@ export class ClientBusinessService {
       }
     },
     );
-
+    
+  }
+ 
+  getBusinessById(businessID: string): Observable<any> {
+    return this.http.get(REQ_API + 'profile/business/details/'+businessID,{
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + this.token.getToken(),
+        'Content-Type': 'application/json',
+      }),
+    });
   }
   addpet(pet:ClientAddPetForm):Observable<any>{
 return this.http.post(

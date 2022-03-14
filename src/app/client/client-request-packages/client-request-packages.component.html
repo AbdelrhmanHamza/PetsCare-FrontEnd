@@ -1,0 +1,32 @@
+<div class="card" style="width: 18rem" *ngFor="let package of packages">
+  <div class="card-body">
+    <h5 class="card-title">{{ package.package_name }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+    <p class="card-text">{{ package.package_description }}</p>
+    <hr />
+    <div class="d-flex justify-content-between">
+      <span class="card-text mx-3"
+        ><span class="text-primary">Price: </span> {{ package.package_price }}
+        <span>L.E</span>
+      </span>
+      <button
+        type="button mx-2"
+        class="btn btn-primary"
+        (click)="open(mymodal, package.id)"
+      >
+        Request
+      </button>
+    </div>
+  </div>
+</div>
+<ng-template #mymodal let-modal>
+  <div class="modal-body">
+    <button (click)="modal.dismiss()" type="button" class="btn btn-danger">
+      <span style="font-size: 10px" class="badge">x</span>
+    </button>
+    <app-client-request
+      [packageId]="packageID"
+      [businessProfileID]="id"
+    ></app-client-request>
+  </div>
+</ng-template>

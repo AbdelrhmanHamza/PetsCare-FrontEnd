@@ -1,0 +1,65 @@
+<div class="container m-5">
+  <div
+    class="border-start border-5 border-primary ps-5 mb-5"
+    style="max-width: 600px"
+  >
+    <h2 class="display-5 text-uppercase mb-0">Your Request</h2>
+  </div>
+  <div class="row g-5">
+    <div class="col-lg-10">
+      <form [formGroup]="registForm" (ngSubmit)="onSubmit()">
+        <div class="row g-3">
+          <div class="col-12">
+            <textarea
+              id="requestDescription"
+              maxlength="250"
+              formControlName="description"
+              class="form-control bg-light border-0 px-4"
+              name="requestDescription"
+              placeholder="Your request description"
+            >
+            </textarea>
+            <div
+              [hidden]="
+                requestDescription?.valid || requestDescription?.untouched
+              "
+              style="color: red"
+            >
+              <small *ngIf="requestDescription?.errors?.['required']"
+                >Name is required</small
+              >
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="requestDueDate">Due Date</label>
+            <input
+              type="Date"
+              formControlName="request_due_date"
+              class="form-control bg-light border-0 px-4"
+              name="requestDueDate"
+            />
+            <div
+              [hidden]="requestDueDate?.valid || requestDueDate?.untouched"
+              style="color: red"
+            >
+              <small *ngIf="requestDueDate?.errors?.['required']">
+                Due Date is required</small
+              >
+            </div>
+          </div>
+
+          <!-- Request Button -->
+          <div class="col-12">
+            <button
+              class="btn btn-primary w-100 py-3"
+              type="submit"
+              [disabled]="registForm.invalid"
+            >
+              Send Request
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
