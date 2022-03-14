@@ -38,10 +38,10 @@ import { ClientProfileContainerComponent } from './client/client-profile-contain
 import { ClientProfilePetsComponent } from './client/client-profile-pets/client-profile-pets.component';
 
 // import { StripeComponent } from './payment/stripe/stripe.component';
-import { ClientRequestComponent } from './client/clientBrowsing/client-request/client-request.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AddBusinessProfileFormComponent } from './Business/add-business-profile-form/add-business-profile-form.component';
 import { BusinessProfileComponent } from './Business/business-profile/business-profile.component';
+import { ClientRequestComponent } from './client/client-request/client-request.component';
 
 
 @NgModule({
