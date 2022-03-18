@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { TokenStorageService } from './token-storage.service';
 import { Observable } from 'rxjs';
 import { AddBusinessForm } from '../models/add-business-form';
-import { REQ_API } from './enums/env';
+// import { REQ_API } from './enums/env';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class BusinessProfileService {
   constructor(private http: HttpClient, private token: TokenStorageService) {}
 
   getBusinesses(): Observable<any> {
-    return this.http.get(REQ_API + 'profile/user', {
+    return this.http.get(`${environment.REQ_API}` + 'profile/user', {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + this.token.getToken(),
         'Content-Type': 'application/json',
@@ -22,7 +23,7 @@ export class BusinessProfileService {
 
   getSubscribtions(businessID: number): Observable<any> {
     return this.http.get(
-      REQ_API + 'profile/business/' + businessID + '/package/all',
+      `${environment.REQ_API}` + 'profile/business/' + businessID + '/package/all',
       {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + this.token.getToken(),
@@ -33,7 +34,7 @@ export class BusinessProfileService {
   }
   addBusiness(business: AddBusinessForm): Observable<any> {
     return this.http.post(
-      REQ_API + 'profile/business/add',
+      `${environment.REQ_API}` + 'profile/business/add',
       JSON.stringify(business),
       {
         headers: new HttpHeaders({
@@ -45,7 +46,7 @@ export class BusinessProfileService {
   }
   updateBusiness(business: AddBusinessForm, id: string): Observable<any> {
     return this.http.post(
-      REQ_API + 'profile/business/update/' + id,
+      `${environment.REQ_API}` + 'profile/business/update/' + id,
       JSON.stringify(business),
       {
         headers: new HttpHeaders({
@@ -56,7 +57,7 @@ export class BusinessProfileService {
     );
   }
   getBusinessByID(id: string): Observable<any> {
-    return this.http.get(REQ_API + 'profile/business/show/' + id, {
+    return this.http.get(`${environment.REQ_API}` + 'profile/business/show/' + id, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + this.token.getToken(),
         'Content-Type': 'application/json',
@@ -64,7 +65,7 @@ export class BusinessProfileService {
     });
   }
   deleteBusiness(id: number): Observable<any> {
-    return this.http.post(REQ_API + 'profile/business/delete/' + id, null, {
+    return this.http.post(`${environment.REQ_API}` + 'profile/business/delete/' + id, null, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + this.token.getToken(),
         'Content-Type': 'application/json',
@@ -72,7 +73,7 @@ export class BusinessProfileService {
     });
   }
   public sendtokenpayment(token:any) {
-    this.http.post(REQ_API + 'stripe',token)
+    this.http.post(`${environment.REQ_API}` + 'stripe',token)
     //post to package to back end
     
   }

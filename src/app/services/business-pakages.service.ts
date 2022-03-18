@@ -2,9 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ServicePakage } from 'app/models/service-pakage.model';
 import { Observable } from 'rxjs';
-import { REQ_API } from './enums/env';
+// import { REQ_API } from './enums/env';
 import { TokenStorageService } from './token-storage.service';
-
+import { environment } from '../../environments/environment.prod';
 @Injectable({
   providedIn: 'root',
 })
@@ -12,7 +12,7 @@ export class BusinessPakagesService {
   constructor(private http: HttpClient, private token: TokenStorageService) {}
 
   getPakages(id: string): Observable<any> {
-    return this.http.get(REQ_API + 'profile/business/package/' + id, {
+    return this.http.get(`${environment.REQ_API}` + 'profile/business/package/' + id, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + this.token.getToken(),
         'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ export class BusinessPakagesService {
   }
   addPackage(servicePackage: ServicePakage, id: string): Observable<any> {
     return this.http.post(
-      REQ_API + 'profile/business/' + id + '/package/add',
+      `${environment.REQ_API}`+ 'profile/business/' + id + '/package/add',
       JSON.stringify(servicePackage),
       {
         headers: new HttpHeaders({
@@ -32,7 +32,7 @@ export class BusinessPakagesService {
     );
   }
   deletePackage(id: any): Observable<any> {
-    return this.http.get(REQ_API + 'profile/business/package/delete/' + id, {
+    return this.http.get(`${environment.REQ_API}` + 'profile/business/package/delete/' + id, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + this.token.getToken(),
         'Content-Type': 'application/json',
