@@ -32,7 +32,7 @@ import { BusinessPackagesComponent } from './Business/business-packages/business
 import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
 import { ServiceDetailsComponent } from './client/clientBrowsing/service-details/service-details.component';
 
-import { StripeComponent } from './payment/stripe/stripe.component';
+// import { StripeComponent } from './payment/stripe/stripe.component';
 import { ClientAddPetFormComponent } from './client/clientBrowsing/client-add-pet-form/client-add-pet-form.component';
 
 
@@ -43,8 +43,8 @@ import { ClientProfilePetsComponent } from './client/client-profile-pets/client-
 
 // import { StripeComponent } from './payment/stripe/stripe.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { AddBusinessProfileFormComponent } from './Business/add-business-profile-form/add-business-profile-form.component';
-import { BusinessProfileComponent } from './Business/business-profile/business-profile.component';
+import { AddBusinessProfileFormComponent } from './business/add-business-profile-form/add-business-profile-form.component';
+import { BusinessProfileComponent } from './business/business-profile/business-profile.component';
 import { ClientRequestComponent } from './client/client-request/client-request.component';
 
 
@@ -80,7 +80,7 @@ import { ClientRequestComponent } from './client/client-request/client-request.c
     BusinessUpdateContainerComponent,
     ServiceDetailsComponent,
 
-    StripeComponent,
+    // StripeComponent,
     ClientAddPetFormComponent,
     
 

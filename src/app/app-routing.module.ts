@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddBusinessProfileFormComponent } from './Business/add-business-profile-form/add-business-profile-form.component';
-import { BusinessProfileComponent } from './Business/business-profile/business-profile.component';
+import { AddBusinessProfileFormComponent } from './business/add-business-profile-form/add-business-profile-form.component';
+import { BusinessProfileComponent } from './business/business-profile/business-profile.component';
 import { BusinessRequestsTabComponent } from './Business/business-requests-tab/business-requests-tab.component';
 import { BusinessSubscriptionTabComponent } from './Business/business-subscription-tab/business-subscription-tab.component';
 import { BusinessUpdateContainerComponent } from './Business/business-update-container/business-update-container.component';
@@ -19,7 +19,7 @@ import { ServicesComponent } from './home/services/services.component';
 import { ContactContainerComponent } from './pages/contact/contact-container/contact-container.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterationComponent } from './pages/registeration/registeration.component';
-import { StripeComponent } from './payment/stripe/stripe.component';
+// import { StripeComponent } from './payment/stripe/stripe.component';
 
 const routes: Routes = [
 
