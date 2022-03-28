@@ -29,7 +29,7 @@ export class MyBusinessesComponent implements OnInit {
               id: number;
               business_name: any;
               img: string;
-              image_path: string;
+              users_image: any;
               business_type: any;
               open_at: any;
               close_at: any;
@@ -50,8 +50,8 @@ export class MyBusinessesComponent implements OnInit {
                 package_description: element.package_description,
                 package_price: element.package_price,
                 image_path:
-                  element.image_path != null
-                    ? 'http://petscare.test/' + element.image_path
+                element.users_image[0] != null
+                    ? 'http://petscare.test/' + element.users_image[0].image_path
                     : './../../../assets/img/team-1.jpg',
               });
             }

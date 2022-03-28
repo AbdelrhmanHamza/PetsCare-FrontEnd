@@ -3,7 +3,6 @@
         <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
             <h1 class="display-5 text-uppercase mb-0">Please add your pet information</h1>
         </div>
-        {{registForm.value | json}}
         <div class="row g-5">
             <div class="col-lg-7">
                 <form [formGroup]="registForm" (ngSubmit)="getdata()">
@@ -26,7 +25,7 @@
                                 </div>
                         </div>
                         <div class="col-12">
-                            <input type="text" formControlName="pet_age" class="form-control bg-light border-0 px-4"
+                            <input type="date" formControlName="pet_age" class="form-control bg-light border-0 px-4"
                                 placeholder="pet_age" style="height: 55px;">
                                 <div [hidden]="pet_age?.valid || pet_age?.untouched" style="color: red;">
                                     <small *ngIf="pet_age?.errors?.['required']">pet_age is required</small>

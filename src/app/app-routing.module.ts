@@ -19,7 +19,7 @@ import { ServicesComponent } from './home/services/services.component';
 import { ContactContainerComponent } from './pages/contact/contact-container/contact-container.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterationComponent } from './pages/registeration/registeration.component';
-import { StripeComponent } from './payment/stripe/stripe.component';
+// import { StripeComponent } from './payment/stripe/stripe.component';
 
 const routes: Routes = [
 
@@ -60,6 +60,7 @@ const routes: Routes = [
     component: BusinessSubscriptionTabComponent,
   },
   { path: 'business/details/:id', component: BusinessUpdateContainerComponent },
+  {path: 'pet/add', component: ClientAddPetFormComponent}
 
 ];
 

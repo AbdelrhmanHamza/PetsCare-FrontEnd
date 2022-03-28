@@ -13,7 +13,7 @@
                     <span class="card-text mx-3"><span class=" text-primary ">Pet breed:  </span> {{pet.pet_breed}}</span>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <span class="card-text mx-3"><span class=" text-primary ">Pet age:  </span> {{pet.pet_age}}</span>
+                    <span class="card-text mx-3"><span class=" text-primary ">Pet age:  </span> {{pet.pet_age|date}}</span>
                 </div>
                 <div class="d-flex justify-content-between">
                     <span class="card-text mx-3"><span class=" text-primary ">Has medical condition:  </span>
@@ -26,4 +26,4 @@
 </div>
 
 
-<button href="#" class=" mt-5 btn btn-primary">Add Pet </button>
+<button href="#" class=" mt-5 btn btn-primary" (click)="addpets()">Add Pet </button>

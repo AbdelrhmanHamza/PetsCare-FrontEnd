@@ -24,10 +24,7 @@ export class ServiceDetailsComponent implements OnInit {
   id: string = '';
 
   sources: ImagesUrls[] = [
-    { src: '../../../../assets/img/team-1.jpg' },
-    { src: '../../../../assets/img/team-2.jpg' },
-    { src: '../../../../assets/img/blog-1.jpg' },
-    { src: '../../../../assets/img/blog-2.jpg' },
+
   ];
 
   serviceDetails: Bussiness = {
@@ -56,6 +53,24 @@ export class ServiceDetailsComponent implements OnInit {
           this.serviceDetails.package_description = data.service_description;
           this.serviceDetails.package_price = data.business_name;
           this.serviceDetails.address = data.address;
+          data.users_image.forEach((element: 
+            { id: any; 
+            /*business_profile_id: 2
+created_at: "2022-03-20T21:44:58.000000Z"
+id: 5
+image_name: "Screenshot (1).png"
+image_path: "storage/BusinessProfiles/b5CTBv7Ld5YrIRCZrawk1efYNc3O3jmOwi2Ds2qO.png"
+pet_id: null
+updated_at: "2022-03-20T21:44:58.000000Z"
+             */
+            image_name: string; 
+            image_path: string; 
+              }
+             ) => {
+               this.sources.push({
+                 src:'http://petscare.test/'+element.image_path
+               })
+             });
         },
         (err) => {
           console.log(err.error);
