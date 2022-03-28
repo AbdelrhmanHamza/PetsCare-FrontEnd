@@ -1,7 +1,8 @@
-const express = require('express');  
-const app = express();  
-app.use(express.static(__dirname + '/dist/pet-care'));  
-app.all('*', (req, res) => {  
-  res.status(200).sendFile(__dirname + '/dist/pet-care/index.html');  
-});  
+const express = require('express');
+const app = express();
+app.use(express.static('./dist/pet-care'));
+app.get('/*', function(req, res) {
+  res.sendFile('index.html', {root: 'dist/pet-care/'}
+);
+});
 app.listen(process.env.PORT || 8080); 
