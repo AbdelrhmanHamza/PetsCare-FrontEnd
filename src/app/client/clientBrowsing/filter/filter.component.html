@@ -3,7 +3,7 @@
 <h4>
     Filters
 </h4>
-<form (ngSubmit)="applyFilter()" #filterForm="ngForm" class="col-12">
+<form (ngSubmit)="applyFilter()"  [formGroup]="filterForm" #filter="ngForm" class="col-12">
     <!-- By Price -->
     <div class="row">
         <span class="col-12">
@@ -23,7 +23,7 @@
             <span>To</span>
             <div class="form-group row">
                 <div class="col-xs-2">
-                    <input class="form-control" id="to-price" name="to-price" placeholder="1000" type="text">
+                    <input class="form-control" id="to-price" formControlName="max_price" placeholder="1000" type="text">
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
             <span>From</span>
             <div class="form-group row">
                 <div class="col-xs-2">
-                    <input class="form-control" id="from-time" name="from-time" placeholder="9:00" type="text">
+                    <input class="form-control" id="from-time" formControlName="open_at" placeholder="9:00" type="time">
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
             <span>To</span>
             <div class="form-group row">
                 <div class="col-xs-2">
-                    <input class="form-control" id="to-time" name="to-time" placeholder="3:00" type="text">
+                    <input class="form-control" id="to-time" formControlName="close_at" placeholder="3:00" type="time">
                 </div>
             </div>
         </div>
@@ -61,22 +61,15 @@
                         <strong class="text-primary">By Address</strong>
                     </span>
         <br>
-        <div class=" col-3">
+        <div class=" col-6">
             <span>City</span>
             <div class="form-group row">
                 <div class="col-xs-2">
-                    <input class="form-control" id="city" type="text" name="city" placeholder="">
+                    <input class="form-control" id="city" type="text" formControlName="address" placeholder="">
                 </div>
             </div>
         </div>
-        <div class=" col-3">
-            <span>State</span>
-            <div class="form-group row">
-                <div class="col-xs-2">
-                    <input class="form-control" id="state" type="text" name="state" placeholder="">
-                </div>
-            </div>
-        </div>
+       
     </div>
     <br>
     <!-- by type -->
@@ -85,14 +78,13 @@
                        <strong class="text-primary">By Type</strong>
                       </span>
         <br>
-        <div class="dropdown col-4">
-            <label class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type
-        </label>
+        <div class="dropdown col-4">        
+ 
 
-            <select name="type" id="" class="dropdown-menu">
-                    <option value="vets">Vets</option>
+            <select name="type" formControlName="type" id="dropdown" class="form-select">
+                    <option value="vet">Vets</option>
                     <option value="ranch">Ranch</option>
-                    <option value="private">private</option>
+                    <option value="private">Private</option>
                     <option value="hotel">Hotel</option>
             </select>
 
