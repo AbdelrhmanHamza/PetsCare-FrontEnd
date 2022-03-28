@@ -5,7 +5,8 @@
         "ng": "ng",
         "start": "node server.js",
         "watch": "ng build --watch --configuration development",
-        "test": "ng test"
+        "test": "ng test",
+        "heroku-postbuild": "ng build — prod"
     },
     "private": true,
     "dependencies": {
