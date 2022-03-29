@@ -25,7 +25,8 @@ const routes: Routes = [
 
   { path: 'home', component: HomeContainerComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'login/**', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'sign-up/**', redirectTo: '/home', pathMatch: 'full' },
   { path: 'contact-us', component: ContactContainerComponent },
   { path: 'sign-up', component: RegisterationComponent },
   { path: 'login', component: LoginComponent },
@@ -40,7 +41,6 @@ const routes: Routes = [
   { path: 'business/requests', component: BusinessRequestsTabComponent },
   { path: 'business/subscription', component: BusinessSubscriptionTabComponent },
   { path: 'client', component: ClientAddPetFormComponent },
-  { path: 'home', component: HomeContainerComponent },
   { path: 'contact-us', component: ContactContainerComponent },
   { path: 'profile', component: ClientProfileContainerComponent },
   { path: 'businesses/details/:id', component: ServiceDetailsComponent },
