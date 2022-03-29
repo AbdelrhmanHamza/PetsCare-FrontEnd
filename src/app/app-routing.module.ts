@@ -23,44 +23,29 @@ import { RegisterationComponent } from './pages/registeration/registeration.comp
 
 const routes: Routes = [
 
-  {path:'home', component:HomeContainerComponent},
-  { path:'',redirectTo:'/home',pathMatch:'full'},
-  {path:'contact-us',component:ContactContainerComponent},
-  {path:'sign-up', component:RegisterationComponent},
-  { path:'login', component:LoginComponent},
-  {path:'services', component:ServicesComponent},
-  { path:'about-us', component:AboutComponent},
-  { path:'businesses', component:ContainerComponent},
-  { path:'businesses/details', component:ServiceDetailsComponent},
-  { path:'business/profile', component:BusinessProfileComponent},
-  { path:'business/my-businesses', component:MyBusinessesComponent},
-  { path:'business/add', component:AddBusinessProfileFormComponent},
-  { path:'business/details', component:BusinessUpdateContainerComponent},
-  { path:'business/requests', component:BusinessRequestsTabComponent},
-  { path:'business/subscription', component:BusinessSubscriptionTabComponent},
-  {path:'client', component:ClientAddPetFormComponent},
-
   { path: 'home', component: HomeContainerComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
   { path: 'contact-us', component: ContactContainerComponent },
   { path: 'sign-up', component: RegisterationComponent },
-  { path: 'profile', component: ClientProfileContainerComponent },
   { path: 'login', component: LoginComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'about-us', component: AboutComponent },
   { path: 'businesses', component: ContainerComponent },
-  { path: 'businesses/details/:id', component: ServiceDetailsComponent },
+  { path: 'businesses/details', component: ServiceDetailsComponent },
   { path: 'business/profile', component: BusinessProfileComponent },
   { path: 'business/my-businesses', component: MyBusinessesComponent },
   { path: 'business/add', component: AddBusinessProfileFormComponent },
   { path: 'business/details', component: BusinessUpdateContainerComponent },
   { path: 'business/requests', component: BusinessRequestsTabComponent },
-  {
-    path: 'business/subscription',
-    component: BusinessSubscriptionTabComponent,
-  },
+  { path: 'business/subscription', component: BusinessSubscriptionTabComponent },
+  { path: 'client', component: ClientAddPetFormComponent },
+  { path: 'home', component: HomeContainerComponent },
+  { path: 'contact-us', component: ContactContainerComponent },
+  { path: 'profile', component: ClientProfileContainerComponent },
+  { path: 'businesses/details/:id', component: ServiceDetailsComponent },
   { path: 'business/details/:id', component: BusinessUpdateContainerComponent },
-  {path: 'pet/add', component: ClientAddPetFormComponent}
+  { path: 'pet/add', component: ClientAddPetFormComponent }
 
 ];
 
@@ -68,4 +53,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
