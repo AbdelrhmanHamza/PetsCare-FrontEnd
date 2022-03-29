@@ -24,7 +24,7 @@ import { RegisterationComponent } from './pages/registeration/registeration.comp
 const routes: Routes = [
 
   { path: 'home', component: HomeContainerComponent },
-  { path: '', redirectTo: '/home' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'contact-us', component: ContactContainerComponent },
   { path: 'sign-up', component: RegisterationComponent },
   { path: 'login', component: LoginComponent },
