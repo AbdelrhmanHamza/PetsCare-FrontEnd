@@ -29,12 +29,12 @@ export class BusinessRequestsTabComponent implements OnInit {
               first_name: string;
               last_name: string;
               description: string;
-              is_read: number;
+              phone_number: string;
             }) => {
               this.requests.push({
                 user: element.first_name + ' ' + element.last_name,
                 description: element.description,
-                status: element.is_read.toString(),
+                phone: element.phone_number,
               });
             }
           );
