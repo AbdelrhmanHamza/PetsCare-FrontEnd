@@ -10,27 +10,15 @@
                         <tr class="bg-primary">
                             <th>User</th>
                             <th col="2">Description</th>
-                            <th>Status</th>
-                            <th col="2">Actions </th>
+                            <th>Phone Number</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let request of requests">
                             <td>{{request.user}}</td>
                             <td>{{request.description}}</td>
-                            <td>{{request.status}}</td>
-                            <td>
-                                <a class="mx-2" href="">
-                                    <button type="button " class="btn btn-primary">Show</button>
-                                </a>
-                                <a class="mx-2" href="">
-                                    <button type="button mx-2" class="btn btn-danger">
-
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-
-                                </a>
-                            </td>
+                            <td>{{request.phone}}</td>
+                           
                         </tr>
                     </tbody>
                 </table>
